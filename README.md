@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/hywax/shorter/.github/static/cover.png" alt="Shorter" width="100%"/>
+<img src="https://raw.githubusercontent.com/hywax/shorter/main/.github/static/cover.png" alt="Shorter" width="100%"/>
 
 <h3 align="center">Shorter</h3>
 
@@ -23,7 +23,7 @@ Here are some ways you can contribute:
 - [Open an issue](https://github.com/hywax/shorter/issues/new/choose) to report a bug.
 - [Create a pull request](https://github.com/hywax/shorter/compare) to add a new feature or fix a bug.
 
-<img src="https://raw.githubusercontent.com/hywax/shorter/.github/static/contributors.svg" alt="Shorter Contributors" width="100%"/>
+<img src="https://raw.githubusercontent.com/hywax/shorter/main/.github/static/contributors.svg" alt="Shorter Contributors" width="100%"/>
 
 ## License
 
