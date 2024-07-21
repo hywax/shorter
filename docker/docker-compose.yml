@@ -1,0 +1,7 @@
+version: "3.8"
+
+services:
+  web:
+    container_name: shorter-web
+    image: ghcr.io/hywax/shorter-web:latest
+    restart: unless-stopped
