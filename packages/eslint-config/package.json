@@ -1,7 +1,9 @@
 {
   "name": "@shorter/eslint-config",
   "private": true,
+  "type": "module",
   "files": [
+    "base.mjs",
     "nuxt.mjs",
     "vue.mjs"
   ],

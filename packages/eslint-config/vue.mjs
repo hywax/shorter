@@ -1,5 +1,5 @@
 import antfu from '@antfu/eslint-config'
-import { rules } from './default'
+import { rules } from './default.mjs'
 
 export default antfu(
   {
