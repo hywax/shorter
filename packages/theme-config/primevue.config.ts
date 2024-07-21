@@ -49,16 +49,14 @@ export const themePreset = definePreset(Aura, {
   },
 })
 
-export const nuxtConfig = {
-  options: {
-    theme: {
-      preset: themePreset,
-      options: {
-        darkModeSelector: '.dark',
-        cssLayer: {
-          name: 'primevue',
-          order: 'tailwind-base, primevue, tailwind-utilities',
-        },
+export const themeOptions = {
+  theme: {
+    preset: themePreset,
+    options: {
+      darkModeSelector: '.dark',
+      cssLayer: {
+        name: 'primevue',
+        order: 'tailwind-base, primevue, tailwind-utilities',
       },
     },
   },
