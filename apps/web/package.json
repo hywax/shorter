@@ -1,0 +1,35 @@
+{
+  "name": "@shorter/web",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "preview": "nuxt preview",
+    "clean": "rm -rf dist",
+    "clean:modules": "rm -rf .turbo .nuxt node_modules",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "typecheck": "nuxi typecheck",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@vueuse/core": "^10.11.0",
+    "nanoid": "^5.0.7",
+    "primeicons": "^7.0.0",
+    "primevue": "^4.0.0",
+    "vue": "^3.4.33"
+  },
+  "devDependencies": {
+    "@nuxt/fonts": "^0.7.1",
+    "@nuxtjs/color-mode": "^3.4.2",
+    "@nuxtjs/i18n": "^8.3.1",
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "@primevue/nuxt-module": "^4.0.0",
+    "@shorter/eslint-config": "workspace:*",
+    "@shorter/theme-config": "workspace:*",
+    "@vueuse/nuxt": "^10.11.0",
+    "nuxt": "^3.12.4",
+    "vue-tsc": "^2.0.26"
+  }
+}
