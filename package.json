@@ -4,6 +4,7 @@
   "private": true,
   "packageManager": "pnpm@9.0.6",
   "scripts": {
+    "release": "pnpm lint && pnpm typecheck && pnpm build && changelogen --release --push",
     "build": "turbo build",
     "dev": "dotenv -- turbo dev --parallel",
     "dev:api": "dotenv -- pnpm --filter @shorter/web dev",
