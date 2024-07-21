@@ -1,0 +1,22 @@
+{
+  "name": "@shorter/theme-config",
+  "private": true,
+  "files": [
+    "primevue.config.ts",
+    "tailwind.config.ts"
+  ],
+  "scripts": {
+    "clean": "rm -rf dist",
+    "clean:modules": "rm -rf .turbo node_modules",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "dependencies": {
+    "@primevue/themes": "^4.0.0"
+  },
+  "devDependencies": {
+    "@shorter/eslint-config": "workspace:*",
+    "tailwindcss": "^3.4.6",
+    "tailwindcss-primeui": "^0.3.4"
+  }
+}
