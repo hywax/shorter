@@ -4,6 +4,9 @@
 
 <p align="center">
   <b><a href="#introduction">Introduction</a></b> | <b><a href="#features">Features</a></b> | <b><a href="#contributing">Contributing</a></b>
+  <br/><br/>
+  <a href="https://github.com/hywax/shorter"><img src="https://img.shields.io/github/last-commit/hywax/shorter?logo=github&color=87A3FF&logoColor=fff" alt="Last commit"/></a>
+  <a href="https://github.com/hywax/shorter/blob/main/LICENSE"><img src="https://img.shields.io/github/license/dubinc/dub?label=license&logo=opensourceinitiative&color=87A3FF&logoColor=fff" alt="License MIT"/></a>
 </p>
 
 ## Introduction
