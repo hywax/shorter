@@ -1,7 +1,7 @@
 {
   "name": "@shorter/eslint-config",
-  "private": true,
   "type": "module",
+  "private": true,
   "files": [
     "base.mjs",
     "nuxt.mjs",
@@ -13,11 +13,11 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
   },
-  "dependencies": {
-    "@antfu/eslint-config": "^2.23.1"
-  },
   "peerDependencies": {
     "eslint": "^9.7.0"
+  },
+  "dependencies": {
+    "@antfu/eslint-config": "^2.23.1"
   },
   "devDependencies": {
     "eslint": "^9.7.0"
