@@ -1,0 +1,23 @@
+{
+  "name": "@shorter/eslint-config",
+  "private": true,
+  "files": [
+    "nuxt.mjs",
+    "vue.mjs"
+  ],
+  "scripts": {
+    "clean": "rm -rf dist",
+    "clean:modules": "rm -rf .turbo node_modules",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "dependencies": {
+    "@antfu/eslint-config": "^2.23.1"
+  },
+  "peerDependencies": {
+    "eslint": "^9.7.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.7.0"
+  }
+}
