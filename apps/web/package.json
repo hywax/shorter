@@ -14,22 +14,23 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/fonts": "^0.7.1",
+    "@nuxt/ui": "^2.18.0",
+    "@nuxtjs/i18n": "^8.3.1",
     "@vueuse/core": "^10.11.0",
+    "@vueuse/nuxt": "^10.11.0",
     "nanoid": "^5.0.7",
-    "primeicons": "^7.0.0",
-    "primevue": "^4.0.0",
-    "vue": "^3.4.33"
+    "nuxt-zod-i18n": "^1.9.0",
+    "vue": "^3.4.33",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@nuxt/fonts": "^0.7.1",
-    "@nuxtjs/color-mode": "^3.4.2",
-    "@nuxtjs/i18n": "^8.3.1",
-    "@nuxtjs/tailwindcss": "^6.12.1",
-    "@primevue/nuxt-module": "^4.0.0",
+    "@iconify-json/emojione": "^1.1.10",
+    "@iconify-json/heroicons": "^1.1.23",
+    "@iconify-json/simple-icons": "^1.1.110",
     "@shorter/eslint-config": "workspace:*",
-    "@shorter/theme-config": "workspace:*",
-    "@vueuse/nuxt": "^10.11.0",
     "nuxt": "^3.12.4",
+    "tailwindcss": "^3.4.7",
     "vue-tsc": "^2.0.26"
   }
 }
