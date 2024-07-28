@@ -1,6 +1,35 @@
 # Changelog
 
 
+## v0.0.2
+
+[compare changes](https://github.com/hywax/shorter/compare/v0.0.1...v0.0.2)
+
+### 🏡 Chore
+
+- Update CONTRIBUTORS ([3606a8e](https://github.com/hywax/shorter/commit/3606a8e))
+- Optimize configs ([f02607e](https://github.com/hywax/shorter/commit/f02607e))
+- Example web env ([d85c226](https://github.com/hywax/shorter/commit/d85c226))
+- Connect i18n ([780393e](https://github.com/hywax/shorter/commit/780393e))
+- Remove eslint-config package ([deb2783](https://github.com/hywax/shorter/commit/deb2783))
+- App meta tags ([41953b4](https://github.com/hywax/shorter/commit/41953b4))
+- Optimize web dependencies ([edab08b](https://github.com/hywax/shorter/commit/edab08b))
+- Tailwind config ([f4b9aa1](https://github.com/hywax/shorter/commit/f4b9aa1))
+- Spa loading template ([7ae0fae](https://github.com/hywax/shorter/commit/7ae0fae))
+- Create ui components ([11ca17c](https://github.com/hywax/shorter/commit/11ca17c))
+- Create default layout ([d49db84](https://github.com/hywax/shorter/commit/d49db84))
+- Create auth pages ([c2168d8](https://github.com/hywax/shorter/commit/c2168d8))
+- Rewrite app config ([d71b82b](https://github.com/hywax/shorter/commit/d71b82b))
+- Create error page ([d9d94c0](https://github.com/hywax/shorter/commit/d9d94c0))
+- Create logotype ([e55bc6f](https://github.com/hywax/shorter/commit/e55bc6f))
+- Prepare index page ([b126715](https://github.com/hywax/shorter/commit/b126715))
+- Merge remote-tracking branch 'origin/main' ([6065ed8](https://github.com/hywax/shorter/commit/6065ed8))
+
+### ❤️ Contributors
+
+- Hywax ([@hywax](http://github.com/hywax))
+- Bot ([@hywax-assistant](http://github.com/hywax-assistant))
+
 ## v0.0.1
 
 
