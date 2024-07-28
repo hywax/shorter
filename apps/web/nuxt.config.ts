@@ -1,20 +1,33 @@
-import { themeOptions } from '@shorter/theme-config/primevue.config'
+import { fileURLToPath } from 'node:url'
 
 export default defineNuxtConfig({
   devtools: {
     enabled: false,
   },
+  ssr: false,
   modules: [
+    'nuxt-zod-i18n',
     '@vueuse/nuxt',
-    '@nuxtjs/color-mode',
-    '@nuxtjs/i18n',
-    '@nuxtjs/tailwindcss',
-    '@primevue/nuxt-module',
+    '@nuxt/ui',
     '@nuxt/fonts',
+    '@nuxtjs/i18n',
   ],
-  primevue: {
-    options: themeOptions,
+  runtimeConfig: {
+    nitro: {
+      envPrefix: 'APP_',
+    },
+    public: {
+      disableSponsorLink: '',
+      disableSourceLink: '',
+    },
   },
+  alias: {
+    '#schema': fileURLToPath(new URL('./schema', import.meta.url)),
+  },
+  components: [
+    { path: '~/components/ui', prefix: 'U', pathPrefix: false },
+    '~/components',
+  ],
   colorMode: {
     classSuffix: '',
     preference: 'dark',
@@ -30,10 +43,30 @@ export default defineNuxtConfig({
       },
     ],
   },
-  css: [
-    'primeicons/primeicons.css',
-    '~/assets/css/main.css',
-  ],
+  i18n: {
+    langDir: 'locales',
+    strategy: 'prefix_except_default',
+    defaultLocale: 'en',
+    experimental: {
+      localeDetector: './server/i18n/localeDetector.ts',
+      autoImportTranslationFunctions: true,
+    },
+    detectBrowserLanguage: {
+      useCookie: true,
+      alwaysRedirect: true,
+    },
+    locales: [
+      { code: 'en', iso: 'en-US', name: 'English', file: 'en-US.ts' },
+      { code: 'ru', iso: 'ru-RU', name: 'Русский', file: 'ru-RU.ts' },
+    ],
+  },
+  zodI18n: {
+    localeCodesMapping: {
+      'en-GB': 'en',
+      'ru-RU': 'ru',
+    },
+  },
+  css: ['~/assets/css/main.css'],
   future: {
     compatibilityVersion: 4,
   },
