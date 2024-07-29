@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxt/fonts',
     '@nuxtjs/i18n',
+    '@sidebase/nuxt-auth',
   ],
   runtimeConfig: {
     nitro: {
@@ -19,6 +20,15 @@ export default defineNuxtConfig({
     public: {
       disableSponsorLink: '',
       disableSourceLink: '',
+    },
+  },
+  auth: {
+    provider: {
+      type: 'authjs',
+      defaultProvider: 'credentials',
+    },
+    globalAppMiddleware: {
+      isEnabled: true,
     },
   },
   alias: {
@@ -45,7 +55,7 @@ export default defineNuxtConfig({
   },
   i18n: {
     langDir: 'locales',
-    strategy: 'prefix_except_default',
+    strategy: 'no_prefix',
     defaultLocale: 'en',
     experimental: {
       localeDetector: './server/i18n/localeDetector.ts',
