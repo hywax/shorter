@@ -38,7 +38,6 @@ const props = defineProps<{
 }>()
 
 const { icons } = useAppConfig()
-const switchLocalePath = useSwitchLocalePath()
 
 const err = computed(() => {
   if ([401, 401, 403, 404, 500].includes(props.error.statusCode)) {
@@ -60,7 +59,7 @@ function reloadPage() {
 
 function goHome() {
   return clearError({
-    redirect: switchLocalePath('/'),
+    redirect: '/',
   })
 }
 </script>
