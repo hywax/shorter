@@ -14,6 +14,13 @@
 </template>
 
 <script setup lang="ts">
-const { localesMap, currentLocale } = useI18nDictionary()
-const items = computed(() => [Object.values(localesMap.value)])
+const { localesDictionary, currentLocale } = useI18nUtils()
+const { setLocale } = useI18n()
+
+const items = computed(() => {
+  return [Object.values(localesDictionary.value).map((locale) => ({
+    ...locale,
+    click: () => setLocale(locale.code),
+  }))]
+})
 </script>

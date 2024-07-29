@@ -6,7 +6,7 @@
 
     <div class="w-full bg-background lg:w-1/2 flex flex-col">
       <header class="px-6 pt-6 flex justify-end">
-        <UI18nSelect />
+        <LocaleSelector />
       </header>
 
       <main class="flex-1 flex items-center justify-center">
