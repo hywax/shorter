@@ -21,21 +21,27 @@
     </div>
     -->
 
-    <UForm class="space-y-4" :state="state" :schema="registerSchema" @submit="onSubmit">
-      <UFormGroup :label="$t('auth.form.name')" name="name" required>
-        <UInput v-model="state.name" size="md" />
+    <UForm
+      ref="form"
+      class="space-y-4"
+      :state="state"
+      :schema="registerSchema"
+      @submit="onSubmit"
+    >
+      <UFormGroup :label="$t('auth.form.name.label')" name="name" required>
+        <UInput v-model="state.name" size="md" :placeholder="$t('auth.form.name.placeholder')" />
       </UFormGroup>
 
-      <UFormGroup :label="$t('auth.form.email')" name="email" required>
-        <UInput v-model="state.email" type="email" size="md" />
+      <UFormGroup :label="$t('auth.form.email.label')" name="email" required>
+        <UInput v-model="state.email" type="email" size="md" :placeholder="$t('auth.form.email.placeholder')" />
       </UFormGroup>
 
-      <UFormGroup :label="$t('auth.form.password')" name="password" required>
-        <UInput v-model="state.password" type="password" size="md" />
+      <UFormGroup :label="$t('auth.form.password.label')" name="password" required>
+        <UInput v-model="state.password" type="password" size="md" :placeholder="$t('auth.form.password.placeholder')" />
       </UFormGroup>
 
       <div class="flex justify-end">
-        <ULink :to="localePath('/auth/forgot')" class="text-sm text-gray-700 dark:text-gray-200 hover:underline">
+        <ULink to="/auth/forgot" class="text-sm text-gray-700 dark:text-gray-200 hover:underline">
           {{ $t('auth.links.forgot') }}
         </ULink>
       </div>
@@ -48,7 +54,7 @@
     <div class="mt-4 text-sm text-gray-600 dark:text-gray-500 text-center">
       <I18nT keypath="auth.links.login" scope="global">
         <template #link>
-          <ULink :to="localePath('/auth/login')" class="text-primary hover:underline">
+          <ULink to="/auth/login" class="text-primary hover:underline">
             {{ $t('auth.login.title') }}
           </ULink>
         </template>
@@ -58,19 +64,24 @@
 </template>
 
 <script setup lang="ts">
-import type { FormSubmitEvent } from '#ui/types'
+import type { Form, FormSubmitEvent } from '#ui/types'
 import { type RegisterSchema, registerSchema } from '#schema'
 
 definePageMeta({
   layout: 'auth',
+  auth: {
+    unauthenticatedOnly: true,
+    navigateAuthenticatedTo: '/',
+  },
 })
 
 useHead({
-  title: $t('auth.register.title'),
+  title: () => $t('auth.register.title'),
 })
 
-const localePath = useLocalePath()
+const { onChangeLocale } = useI18nUtils()
 
+const form = ref<Form<RegisterSchema>>()
 const state = reactive({
   name: '',
   email: '',
@@ -80,4 +91,8 @@ const state = reactive({
 function onSubmit(_event: FormSubmitEvent<RegisterSchema>) {
 
 }
+
+onChangeLocale(() => {
+  form.value?.clear()
+})
 </script>

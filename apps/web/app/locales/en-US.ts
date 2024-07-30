@@ -65,15 +65,28 @@ export default {
       description: 'Enter your email and we’ll send you a code you can use to update your password.',
     },
     form: {
-      name: 'Name',
-      email: 'Email',
-      password: 'Password',
-      remember: 'Remember me',
+      name: {
+        label: 'Name',
+        placeholder: 'Enter your name',
+      },
+      email: {
+        label: 'Email',
+        placeholder: 'Enter your email',
+      },
+      password: {
+        label: 'Password',
+        placeholder: 'Enter your password',
+      },
       action: {
         login: 'Log In',
         register: 'Sign Up',
         forgot: 'Send Code',
       },
+    },
+    errors: {
+      title: 'Error',
+      credentials: 'Invalid email or password',
+      unknown: 'An error occurred while processing your request',
     },
     links: {
       login: 'Already have an account? {link}',

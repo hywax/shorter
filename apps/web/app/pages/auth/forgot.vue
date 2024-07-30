@@ -7,9 +7,15 @@
       {{ $t('auth.forgot.description') }}
     </p>
 
-    <UForm class="space-y-4" :state="state" :schema="forgotSchema" @submit="onSubmit">
-      <UFormGroup :label="$t('auth.form.email')" name="email" required>
-        <UInput v-model="state.email" type="email" size="md" />
+    <UForm
+      ref="form"
+      class="space-y-4"
+      :state="state"
+      :schema="forgotSchema"
+      @submit="onSubmit"
+    >
+      <UFormGroup :label="$t('auth.form.email.label')" name="email" required>
+        <UInput v-model="state.email" type="email" size="md" :placeholder="$t('auth.form.email.placeholder')" />
       </UFormGroup>
 
       <UButton type="submit" size="md" block>
@@ -20,17 +26,24 @@
 </template>
 
 <script setup lang="ts">
-import type { FormSubmitEvent } from '#ui/types'
+import type { Form, FormSubmitEvent } from '#ui/types'
 import { type ForgotSchema, forgotSchema } from '#schema'
 
 definePageMeta({
   layout: 'auth',
+  auth: {
+    unauthenticatedOnly: true,
+    navigateAuthenticatedTo: '/',
+  },
 })
 
 useHead({
-  title: $t('auth.forgot.title'),
+  title: () => $t('auth.forgot.title'),
 })
 
+const { onChangeLocale } = useI18nUtils()
+
+const form = ref<Form<ForgotSchema>>()
 const state = reactive({
   email: '',
 })
@@ -38,4 +51,8 @@ const state = reactive({
 function onSubmit(_event: FormSubmitEvent<ForgotSchema>) {
 
 }
+
+onChangeLocale(() => {
+  form.value?.clear()
+})
 </script>

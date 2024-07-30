@@ -17,6 +17,9 @@ export default defineNuxtConfig({
     nitro: {
       envPrefix: 'APP_',
     },
+    baseUrl: '',
+    authSecret: '',
+    authAllowRegistration: '',
     public: {
       disableSponsorLink: '',
       disableSourceLink: '',
