@@ -25,7 +25,7 @@
       ref="form"
       class="space-y-4"
       :state="state"
-      :schema="registerSchema"
+      :schema="authRegisterSchema"
       @submit="onSubmit"
     >
       <UFormGroup :label="$t('auth.form.name.label')" name="name" required>
@@ -65,7 +65,7 @@
 
 <script setup lang="ts">
 import type { Form, FormSubmitEvent } from '#ui/types'
-import { type RegisterSchema, registerSchema } from '#schema'
+import { type AuthRegisterSchema, authRegisterSchema } from '#schema'
 
 definePageMeta({
   layout: 'auth',
@@ -81,14 +81,14 @@ useHead({
 
 const { onChangeLocale } = useI18nUtils()
 
-const form = ref<Form<RegisterSchema>>()
+const form = ref<Form<AuthRegisterSchema>>()
 const state = reactive({
   name: '',
   email: '',
   password: '',
 })
 
-function onSubmit(_event: FormSubmitEvent<RegisterSchema>) {
+function onSubmit(_event: FormSubmitEvent<AuthRegisterSchema>) {
 
 }
 

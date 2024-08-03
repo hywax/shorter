@@ -11,7 +11,7 @@
       ref="form"
       class="space-y-4"
       :state="state"
-      :schema="loginSchema"
+      :schema="authLoginSchema"
       @submit="onSubmit"
     >
       <UAlert
@@ -55,7 +55,7 @@
 
 <script setup lang="ts">
 import type { Form, FormSubmitEvent } from '#ui/types'
-import { type LoginSchema, loginSchema } from '#schema'
+import { type AuthLoginSchema, authLoginSchema } from '#schema'
 
 definePageMeta({
   layout: 'auth',
@@ -77,13 +77,14 @@ const { signIn } = useAuth()
 const loading = ref(false)
 const error = ref<string>('')
 
-const form = ref<Form<LoginSchema>>()
+const form = ref<Form<AuthLoginSchema>>()
+// todo: remove credentials from state
 const state = reactive({
-  email: 'example@example.com',
-  password: 'example',
+  email: 'admin@example.com',
+  password: 'password',
 })
 
-async function onSubmit(event: FormSubmitEvent<LoginSchema>): Promise<void> {
+async function onSubmit(event: FormSubmitEvent<AuthLoginSchema>): Promise<void> {
   loading.value = true
   error.value = ''
 

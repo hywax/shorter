@@ -11,7 +11,7 @@
       ref="form"
       class="space-y-4"
       :state="state"
-      :schema="forgotSchema"
+      :schema="authForgotSchema"
       @submit="onSubmit"
     >
       <UFormGroup :label="$t('auth.form.email.label')" name="email" required>
@@ -27,7 +27,7 @@
 
 <script setup lang="ts">
 import type { Form, FormSubmitEvent } from '#ui/types'
-import { type ForgotSchema, forgotSchema } from '#schema'
+import { type AuthForgotSchema, authForgotSchema } from '#schema'
 
 definePageMeta({
   layout: 'auth',
@@ -43,12 +43,12 @@ useHead({
 
 const { onChangeLocale } = useI18nUtils()
 
-const form = ref<Form<ForgotSchema>>()
+const form = ref<Form<AuthForgotSchema>>()
 const state = reactive({
   email: '',
 })
 
-function onSubmit(_event: FormSubmitEvent<ForgotSchema>) {
+function onSubmit(_event: FormSubmitEvent<AuthForgotSchema>) {
 
 }
 
