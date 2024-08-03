@@ -1,5 +1,6 @@
 .nuxt
 .output
+db.*
 
 dist
 node_modules

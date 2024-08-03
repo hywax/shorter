@@ -35,7 +35,7 @@ export default defineNuxtConfig({
     },
   },
   alias: {
-    '#schema': fileURLToPath(new URL('./schema', import.meta.url)),
+    '#schema': fileURLToPath(new URL('./app/schema/index', import.meta.url)),
   },
   components: [
     { path: '~/components/ui', prefix: 'U', pathPrefix: false },
@@ -61,7 +61,7 @@ export default defineNuxtConfig({
     strategy: 'no_prefix',
     defaultLocale: 'en',
     experimental: {
-      localeDetector: './server/i18n/localeDetector.ts',
+      localeDetector: fileURLToPath(new URL('./server/i18n/localeDetector.ts', import.meta.url)),
       autoImportTranslationFunctions: true,
     },
     detectBrowserLanguage: {
@@ -80,6 +80,18 @@ export default defineNuxtConfig({
     },
   },
   css: ['~/assets/css/main.css'],
+  nitro: {
+    alias: {
+      'consola': 'consola',
+      'defu': 'defu',
+      '#db': fileURLToPath(new URL('./server/database/index', import.meta.url)),
+      '#services': fileURLToPath(new URL('./server/services/index', import.meta.url)),
+      '#constants': fileURLToPath(new URL('./server/constants', import.meta.url)),
+    },
+    experimental: {
+      tasks: true,
+    },
+  },
   future: {
     compatibilityVersion: 4,
   },
