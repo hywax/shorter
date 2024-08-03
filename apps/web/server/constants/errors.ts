@@ -1,0 +1,8 @@
+export const BAD_REQUEST = '400000: Bad request'
+export const USER_INVALID_DATA = '400001: Invalid user data'
+export const UNAUTHORIZED = '401000: Unauthorized'
+export const FORBIDDEN = '403000: Forbidden'
+export const NOT_FOUND = '404000: Not found'
+export const USER_ALL_READY_EXISTS = '409001: User with this email already exists'
+export const INTERNAL_ERROR = '500000: Internal server error'
+export const NOT_IMPLEMENTED = '501000: Not implemented'

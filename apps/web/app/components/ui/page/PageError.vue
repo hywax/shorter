@@ -40,10 +40,10 @@ const props = defineProps<{
 const { icons } = useAppConfig()
 
 const err = computed(() => {
-  if ([401, 401, 403, 404, 500].includes(props.error.statusCode)) {
+  if ([400, 401, 403, 404, 500].includes(props.error.statusCode)) {
     return {
-      title: $t(`error.codes.${props.error.statusCode}.title`),
-      message: $t(`error.codes.${props.error.statusCode}.message`),
+      title: $t(`error.title`),
+      message: $t(`error.codes.${props.error.statusCode}000`),
     }
   }
 

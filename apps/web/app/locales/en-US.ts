@@ -13,26 +13,14 @@ export default {
     reload: 'Reload Page',
     backHome: 'Back to Home',
     codes: {
-      400: {
-        title: 'Bad Request',
-        message: 'The request is invalid.',
-      },
-      401: {
-        title: 'Unauthorized',
-        message: 'You are not authorized to access this page.',
-      },
-      403: {
-        title: 'Access Denied',
-        message: 'You do not have permission to access this page',
-      },
-      404: {
-        title: 'Page Not Found',
-        message: 'The page you are looking for does not exist.',
-      },
-      500: {
-        title: 'Internal Server Error',
-        message: 'An unexpected error occurred.',
-      },
+      400000: 'Bad request',
+      400001: 'Invalid user data',
+      401000: 'Unauthorized',
+      403000: 'Forbidden',
+      404000: 'Not found',
+      409001: 'User with this email already exists',
+      500000: 'Internal server error',
+      501000: 'Not implemented',
     },
   },
   i18n: {
