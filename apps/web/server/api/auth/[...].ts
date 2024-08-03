@@ -1,32 +1,37 @@
-import bcrypt from 'bcrypt'
 import Credentials from 'next-auth/providers/credentials'
+import { z } from 'zod'
 import { NuxtAuthHandler } from '#auth'
-import { loginSchema } from '#schema'
+import { userService } from '#services'
 
 export default NuxtAuthHandler({
-  secret: 'test',
+  secret: useRuntimeConfig().authSecret,
   pages: {
     signIn: '/auth/login',
     signOut: '/auth/logout',
     error: '/auth/error',
   },
   callbacks: {
-    async jwt({ token, user }) {
+    /**
+     * JWT callback to process user data and enrichment.
+     */
+    jwt({ token, user }) {
       if (user) {
         token.user = user
       }
 
       return token
     },
-
+    /**
+     * Session callback to process user session data and enrichment.
+     * Since the `markUserOnline` method returns a user, based on it, we can take the actual data model.
+     */
     async session({ session, token }) {
+      const { markUserOnline } = userService()
+      const user = await markUserOnline(token.sub as string)
+
       return {
         ...session,
-        user: {
-          id: token.sub,
-          name: session.user?.name,
-          email: session.user?.email,
-        },
+        user,
       }
     },
   },
@@ -37,22 +42,22 @@ export default NuxtAuthHandler({
         email: { label: 'Email', type: 'email' },
         password: { label: 'Password', type: 'password' },
       },
-      authorize(credentials: unknown) {
+      async authorize(credentials: unknown) {
+        const loginSchema = z.object({
+          email: z.string().email(),
+          password: z.string().min(6),
+        })
+
         const { success, data } = loginSchema.safeParse(credentials)
 
         if (!success) {
           return null
         }
 
-        // ... get user from database
-        const user = {
-          id: '263c3217-aabe-4901-b5b5-4283123f31c9',
-          name: 'Alex Smith',
-          email: 'example@example.com',
-          password: '$2b$10$SR7Gu4OeIJ7hRLRVbL45ZOUpwfPU0LB0UCju4Hd1T83nso0S14kce', // example
-        }
+        const { findByCredentials } = userService()
+        const user = await findByCredentials(data.email, data.password)
 
-        if (bcrypt.compareSync(data.password, user.password)) {
+        if (user) {
           return user
         }
 
