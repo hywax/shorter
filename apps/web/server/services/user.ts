@@ -38,7 +38,11 @@ export function userService() {
         .where(eq(tables.users.id, id))
         .returning()
 
-      return transformToUserSafe(user[0])
+      if (!user.length) {
+        throw new Error('User not found')
+      }
+
+      return transformToUserSafe(user[0] as User)
     },
     async getUsers(): Promise<UserSafe[]> {
       logger.debug('call getUsers')
@@ -63,7 +67,11 @@ export function userService() {
         password: await bcrypt.hash(data.password, 10),
       }).returning()
 
-      return transformToUserSafe(rows[0])
+      if (!rows.length) {
+        throw new Error('User not created')
+      }
+
+      return transformToUserSafe(rows[0] as User)
     },
   }
 }

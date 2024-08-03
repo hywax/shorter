@@ -20,6 +20,10 @@ interface CustomError {
 function parseErrorString(errorString: string): CustomError {
   const [code, message] = errorString.split(':')
 
+  if (!code || !message) {
+    throw new Error('Invalid error string format')
+  }
+
   return {
     statusCode: Number.parseInt(code.slice(0, 3), 10),
     statusMessage: message.trim(),
@@ -42,11 +46,11 @@ function getErrorCode(exception: unknown, codes: ErrorMapCodes): string {
   })
 
   if (Object.hasOwn(codesMap, 'ALL')) {
-    errorString = codes.ALL
+    errorString = codes.ALL!
   } else if (exception instanceof ZodError) {
     errorString = codesMap.ZOD
   } else if (exception instanceof SqliteError) {
-    errorString = Object.hasOwn(codesMap, exception.code) ? codesMap[exception.code] : codesMap.SQLITE
+    errorString = Object.hasOwn(codesMap, exception.code) ? codesMap[exception.code]! : codesMap.SQLITE
   } else {
     errorString = codesMap.DEFAULT
   }
