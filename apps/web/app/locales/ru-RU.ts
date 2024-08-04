@@ -1,15 +1,20 @@
 export default {
   app: {
+    i18n: {
+      title: 'Язык',
+      select: 'Выбрать язык интерфейса',
+    },
+    colorMode: {
+      title: 'Тема',
+      light: 'Переключиться на светлый режим',
+      dark: 'Переключиться на темный режим',
+    },
     footer: {
       copyright: '© {year} Powered by {author} {version}',
       github: 'Github репозиторий',
       boosty: 'Донат на Boosty',
       personal: 'Перейти на личный сайт',
     },
-  },
-  i18n: {
-    title: 'Язык',
-    select: 'Выбрать язык интерфейса',
   },
   error: {
     title: 'Ошибка',
@@ -26,11 +31,6 @@ export default {
       500000: 'Внутренняя ошибка сервера',
       501000: 'Не реализовано',
     },
-  },
-  colorMode: {
-    title: 'Тема',
-    light: 'Переключиться на светлый режим',
-    dark: 'Переключиться на темный режим',
   },
   account: {
     menu: {

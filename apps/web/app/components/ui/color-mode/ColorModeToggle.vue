@@ -45,5 +45,5 @@ const isDark = computed({
   },
 })
 
-const areaLabel = computed(() => isDark.value ? t('colorMode.light') : t('colorMode.dark'))
+const areaLabel = computed(() => isDark.value ? t('app.colorMode.light') : t('app.colorMode.dark'))
 </script>

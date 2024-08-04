@@ -1,5 +1,14 @@
 export default {
   app: {
+    i18n: {
+      title: 'Language',
+      select: 'Select your language',
+    },
+    colorMode: {
+      title: 'Theme',
+      light: 'Switch to Light Mode',
+      dark: 'Switch to Dark Mode',
+    },
     footer: {
       copyright: '© {year} Powered by {author} {version}',
       github: 'Github Repository',
@@ -22,15 +31,6 @@ export default {
       500000: 'Internal server error',
       501000: 'Not implemented',
     },
-  },
-  i18n: {
-    title: 'Language',
-    select: 'Select your language',
-  },
-  colorMode: {
-    title: 'Theme',
-    light: 'Switch to Light Mode',
-    dark: 'Switch to Dark Mode',
   },
   account: {
     menu: {
