@@ -1,6 +1,6 @@
 <template>
   <UDropdown :items="items" :ui="{ item: { disabled: 'cursor-text select-text' } }" :popper="{ placement: 'bottom-end' }">
-    <UAvatar src="https://avatars.githubusercontent.com/u/739984?v=4" size="md" />
+    <UAvatar :alt="user?.name" size="md" />
 
     <template #account="{ item }">
       <div class="text-left">
@@ -22,9 +22,11 @@
 </template>
 
 <script setup lang="ts">
-const items = [
+const { clear: singOut, user } = useUserSession()
+
+const items = computed(() => [
   [{
-    label: 'ben@example.com',
+    label: user.value?.email,
     slot: 'account',
     disabled: true,
   }], [{
@@ -33,6 +35,10 @@ const items = [
   }], [{
     label: 'Sign out',
     icon: 'i-heroicons-arrow-left-on-rectangle',
+    click: async () => {
+      await singOut()
+      await navigateTo('/auth/login')
+    },
   }],
-]
+])
 </script>
