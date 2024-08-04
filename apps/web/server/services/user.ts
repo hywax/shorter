@@ -50,7 +50,11 @@ export async function createUser(data: UserDraft): Promise<UserSafe> {
     password: await bcrypt.hash(data.password, 10),
   }).returning()
 
-  return transformToUserSafe(rows[0])
+  if (!rows.length) {
+    throw new Error('User not created')
+  }
+
+  return transformToUserSafe(rows[0]!)
 }
 
 /**
@@ -98,5 +102,9 @@ export async function updateUserOnlineStatus(userId: User['id']): Promise<UserSa
     .where(eq(tables.users.id, userId))
     .returning()
 
-  return transformToUserSafe(user[0])
+  if (!user.length) {
+    throw new Error('User not found')
+  }
+
+  return transformToUserSafe(user[0]!)
 }

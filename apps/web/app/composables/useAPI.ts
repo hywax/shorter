@@ -6,6 +6,7 @@ export function useAPI<T>(
 ) {
   return useFetch(url, {
     ...options,
+    // @ts-expect-error no overload matches this call. Nuxt plans to convert to an easier way to create a custom http client.
     $fetch: useNuxtApp().$api,
   })
 }
