@@ -1,6 +1,54 @@
 # Changelog
 
 
+## v0.0.3
+
+[compare changes](https://github.com/hywax/shorter/compare/v0.0.2...v0.0.3)
+
+### 🩹 Fixes
+
+- Typecheck errors ([2d66e5a](https://github.com/hywax/shorter/commit/2d66e5a))
+- Lint-staged error runs ([b650e66](https://github.com/hywax/shorter/commit/b650e66))
+- Rehydrate errors ([4c00499](https://github.com/hywax/shorter/commit/4c00499))
+- Typecheck errors ([a6da7cc](https://github.com/hywax/shorter/commit/a6da7cc))
+
+### 💅 Refactors
+
+- Change app schema folder ([d626dee](https://github.com/hywax/shorter/commit/d626dee))
+- Change i18n struct ([871fc72](https://github.com/hywax/shorter/commit/871fc72))
+- Services and errors ([53619ba](https://github.com/hywax/shorter/commit/53619ba))
+
+### 📖 Documentation
+
+- Create roadmap project ([af04500](https://github.com/hywax/shorter/commit/af04500))
+- Update readme ([1579f64](https://github.com/hywax/shorter/commit/1579f64))
+- Update roadmap ([09d9fe5](https://github.com/hywax/shorter/commit/09d9fe5))
+
+### 🏡 Chore
+
+- Create i18n utils hook ([e37d9c7](https://github.com/hywax/shorter/commit/e37d9c7))
+- Remove localePath ([2d77429](https://github.com/hywax/shorter/commit/2d77429))
+- Connect sidebase nuxt auth module ([69f4231](https://github.com/hywax/shorter/commit/69f4231))
+- Base server auth handler ([1400ca7](https://github.com/hywax/shorter/commit/1400ca7))
+- Feature pull request template ([c0136eb](https://github.com/hywax/shorter/commit/c0136eb))
+- Issue bug report template ([9c0a4a1](https://github.com/hywax/shorter/commit/9c0a4a1))
+- Issue enhancement template ([4fa79a7](https://github.com/hywax/shorter/commit/4fa79a7))
+- Issue config ([7764ce0](https://github.com/hywax/shorter/commit/7764ce0))
+- Prepare auth pages ([05d1255](https://github.com/hywax/shorter/commit/05d1255))
+- Connect drizzle orm ([a391d61](https://github.com/hywax/shorter/commit/a391d61))
+- Server base utils ([61da4fc](https://github.com/hywax/shorter/commit/61da4fc))
+- Migrate to custom error codes ([3c62cd2](https://github.com/hywax/shorter/commit/3c62cd2))
+- Create user service ([e6fbce9](https://github.com/hywax/shorter/commit/e6fbce9))
+- Auth not implements methods ([e574af5](https://github.com/hywax/shorter/commit/e574af5))
+- Api user auth login ([2d6946b](https://github.com/hywax/shorter/commit/2d6946b))
+- Disable localeDetector ([dd48952](https://github.com/hywax/shorter/commit/dd48952))
+- Migrate to nuxt auth utils ([8f498d8](https://github.com/hywax/shorter/commit/8f498d8))
+- Api user auth register ([9c1494c](https://github.com/hywax/shorter/commit/9c1494c))
+
+### ❤️ Contributors
+
+- Hywax ([@hywax](http://github.com/hywax))
+
 ## v0.0.2
 
 [compare changes](https://github.com/hywax/shorter/compare/v0.0.1...v0.0.2)
