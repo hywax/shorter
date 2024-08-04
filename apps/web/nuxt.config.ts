@@ -2,42 +2,33 @@ import { fileURLToPath } from 'node:url'
 
 export default defineNuxtConfig({
   devtools: {
-    enabled: false,
+    enabled: true,
   },
-  ssr: false,
   modules: [
     'nuxt-zod-i18n',
     '@vueuse/nuxt',
     '@nuxt/ui',
     '@nuxt/fonts',
     '@nuxtjs/i18n',
-    '@sidebase/nuxt-auth',
+    'nuxt-auth-utils',
+    'nuxt-time',
   ],
   runtimeConfig: {
     nitro: {
       envPrefix: 'APP_',
     },
     baseUrl: '',
-    authSecret: '',
+    authSessionPassword: '',
     authAllowRegistration: '',
     public: {
       disableSponsorLink: '',
       disableSourceLink: '',
     },
   },
-  auth: {
-    provider: {
-      type: 'authjs',
-      defaultProvider: 'credentials',
-    },
-    globalAppMiddleware: {
-      isEnabled: true,
-    },
-  },
   alias: {
     '#schema': fileURLToPath(new URL('./app/schema/index', import.meta.url)),
     '#db': fileURLToPath(new URL('./server/database/index', import.meta.url)),
-    '#services': fileURLToPath(new URL('./server/services/index', import.meta.url)),
+    '#services': fileURLToPath(new URL('./server/services', import.meta.url)),
     '#constants': fileURLToPath(new URL('./server/constants', import.meta.url)),
   },
   components: [
@@ -88,7 +79,14 @@ export default defineNuxtConfig({
       tasks: true,
     },
   },
+  compatibilityDate: '2024-08-04',
   future: {
     compatibilityVersion: 4,
   },
+
+  /**
+   * SSR mode is necessary because the race condition appears when the middleware is running.
+   * The session request is triggered after middleware auth/guest, so we don't get the actual session state.
+   */
+  ssr: true,
 })

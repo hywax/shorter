@@ -31,10 +31,7 @@ import { type AuthForgotSchema, authForgotSchema } from '#schema'
 
 definePageMeta({
   layout: 'auth',
-  auth: {
-    unauthenticatedOnly: true,
-    navigateAuthenticatedTo: '/',
-  },
+  middleware: ['guest'],
 })
 
 useHead({

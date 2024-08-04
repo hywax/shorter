@@ -14,14 +14,6 @@
       :schema="authLoginSchema"
       @submit="onSubmit"
     >
-      <UAlert
-        v-if="error"
-        color="red"
-        variant="soft"
-        :title="$t('auth.errors.title')"
-        :description="error"
-      />
-
       <UFormGroup :label="$t('auth.form.email.label')" name="email" required>
         <UInput v-model="state.email" type="email" size="md" :placeholder="$t('auth.form.email.placeholder')" />
       </UFormGroup>
@@ -36,7 +28,7 @@
         </ULink>
       </div>
 
-      <UButton type="submit" size="md" :loading="loading" block>
+      <UButton type="submit" size="md" :loading="status === 'pending'" block>
         {{ $t('auth.form.action.login') }}
       </UButton>
     </UForm>
@@ -54,71 +46,41 @@
 </template>
 
 <script setup lang="ts">
-import type { Form, FormSubmitEvent } from '#ui/types'
+import type { Form } from '#ui/types'
 import { type AuthLoginSchema, authLoginSchema } from '#schema'
 
 definePageMeta({
   layout: 'auth',
-  auth: {
-    unauthenticatedOnly: true,
-    navigateAuthenticatedTo: '/',
-  },
+  middleware: ['guest'],
 })
 
 useHead({
   title: () => $t('auth.login.title'),
 })
 
-const { onChangeLocale } = useI18nUtils()
-const router = useRouter()
-const route = useRoute()
-const { signIn } = useAuth()
-
-const loading = ref(false)
-const error = ref<string>('')
-
 const form = ref<Form<AuthLoginSchema>>()
 // todo: remove credentials from state
 const state = reactive({
-  email: 'admin@example.com',
+  email: 'admin@example2.com',
   password: 'password',
 })
 
-async function onSubmit(event: FormSubmitEvent<AuthLoginSchema>): Promise<void> {
-  loading.value = true
-  error.value = ''
-
-  try {
-    const data = await signIn('credentials', {
-      ...event.data,
-      redirect: false,
-    })
-
-    if (data?.error) {
-      error.value = $t('auth.errors.credentials')
-
-      return
+const { fetch: refreshSession } = useUserSession()
+const { status, execute: onSubmit } = useAPI('/api/auth/login', {
+  method: 'POST',
+  body: state,
+  immediate: false,
+  watch: false,
+  onResponse: async ({ response }) => {
+    if (response.ok) {
+      await refreshSession()
+      await navigateTo('/')
     }
+  },
+})
 
-    const nextUrl = (route.query?.callbackUrl as string) || '/'
-
-    if (nextUrl.startsWith('http')) {
-      await navigateTo(nextUrl, {
-        external: true,
-      })
-    }
-
-    await router.push(nextUrl)
-  } catch (e) {
-    console.error(e)
-    error.value = $t('auth.errors.unknown')
-  } finally {
-    loading.value = false
-  }
-}
-
+const { onChangeLocale } = useI18nUtils()
 onChangeLocale(() => {
   form.value?.clear()
-  error.value = ''
 })
 </script>

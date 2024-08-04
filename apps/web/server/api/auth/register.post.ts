@@ -1,18 +1,22 @@
-import { NOT_IMPLEMENTED } from '#constants/errors'
+import { ERROR_REGISTRATION_DISABLED, ERROR_USER_ALL_READY_EXISTS, ERROR_USER_INVALID_DATA } from '#constants/errors'
+import { createUser } from '#services/user'
 
-export default defineEventHandler(() => {
-  throw errorResolver({}, NOT_IMPLEMENTED)
+export default defineEventHandler(async (event) => {
+  const config = useRuntimeConfig(event)
 
-  // const { createUser } = userService()
-  //
-  // try {
-  //   const data = await readBody(event)
-  //
-  //   return await createUser(data)
-  // } catch (e) {
-  //   throw errorResolver(e, {
-  //     ZOD: USER_INVALID_DATA,
-  //     SQLITE_CONSTRAINT_UNIQUE: USER_ALL_READY_EXISTS,
-  //   })
-  // }
+  if (['false', '0'].includes(config.authAllowRegistration)) {
+    throw errorResolver(null, ERROR_REGISTRATION_DISABLED)
+  }
+
+  try {
+    const data = await readBody(event)
+    const user = await createUser(data)
+
+    await setUserSession(event, { user })
+  } catch (e) {
+    throw errorResolver(e, {
+      ZOD: ERROR_USER_INVALID_DATA,
+      SQLITE_CONSTRAINT_UNIQUE: ERROR_USER_ALL_READY_EXISTS,
+    })
+  }
 })

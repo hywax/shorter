@@ -46,7 +46,7 @@
         </ULink>
       </div>
 
-      <UButton type="submit" size="md" block>
+      <UButton type="submit" size="md" :loading="status === 'pending'" block>
         {{ $t('auth.form.action.register') }}
       </UButton>
     </UForm>
@@ -64,22 +64,17 @@
 </template>
 
 <script setup lang="ts">
-import type { Form, FormSubmitEvent } from '#ui/types'
+import type { Form } from '#ui/types'
 import { type AuthRegisterSchema, authRegisterSchema } from '#schema'
 
 definePageMeta({
   layout: 'auth',
-  auth: {
-    unauthenticatedOnly: true,
-    navigateAuthenticatedTo: '/',
-  },
+  middleware: ['guest'],
 })
 
 useHead({
   title: () => $t('auth.register.title'),
 })
-
-const { onChangeLocale } = useI18nUtils()
 
 const form = ref<Form<AuthRegisterSchema>>()
 const state = reactive({
@@ -88,10 +83,21 @@ const state = reactive({
   password: '',
 })
 
-function onSubmit(_event: FormSubmitEvent<AuthRegisterSchema>) {
+const { fetch: refreshSession } = useUserSession()
+const { status, execute: onSubmit } = useAPI('/api/auth/register', {
+  method: 'POST',
+  body: state,
+  immediate: false,
+  watch: false,
+  onResponse: async ({ response }) => {
+    if (response.ok) {
+      await refreshSession()
+      await navigateTo('/')
+    }
+  },
+})
 
-}
-
+const { onChangeLocale } = useI18nUtils()
 onChangeLocale(() => {
   form.value?.clear()
 })
