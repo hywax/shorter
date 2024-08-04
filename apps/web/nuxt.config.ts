@@ -64,7 +64,7 @@ export default defineNuxtConfig({
     strategy: 'no_prefix',
     defaultLocale: 'en',
     experimental: {
-      localeDetector: fileURLToPath(new URL('./server/i18n/localeDetector.ts', import.meta.url)),
+      // localeDetector: fileURLToPath(new URL('./server/i18n/localeDetector.ts', import.meta.url)),
       autoImportTranslationFunctions: true,
     },
     detectBrowserLanguage: {
