@@ -1,5 +1,9 @@
+/**
+ * This plugin runs the database migrations and seeds.
+ * Triggers after application startup.
+ */
 export default defineNitroPlugin(async () => {
-  if (!import.meta.dev) {
+  if (import.meta.dev) {
     return
   }
 

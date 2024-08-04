@@ -1,10 +1,8 @@
-import { userService } from '#services'
+import { getUsersList } from '#services/user'
 
 export default defineEventHandler(async () => {
-  const { getUsers } = userService()
-
   try {
-    return await getUsers()
+    return await getUsersList()
   } catch (e) {
     throw errorResolver(e)
   }

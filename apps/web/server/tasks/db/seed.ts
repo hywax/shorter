@@ -1,8 +1,8 @@
-import { userService } from '#services'
+import { createUser, getUsersList } from '#services/user'
 
 /**
  * This task is necessary for initial database configuration.
- * - Add user `admin` if the list of users is empty
+ * - Add user `admin` if the list of users is empty.
  */
 export default defineTask({
   meta: {
@@ -10,8 +10,7 @@ export default defineTask({
     description: 'Seed the database',
   },
   async run() {
-    const { getUsers, createUser } = userService()
-    const users = await getUsers()
+    const users = await getUsersList()
 
     if (users.length) {
       return {

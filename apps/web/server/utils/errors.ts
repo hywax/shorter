@@ -1,7 +1,7 @@
 import { ZodError } from 'zod'
 import { SqliteError } from 'better-sqlite3'
 import defu from 'defu'
-import * as errors from '#constants/errors'
+import { ERROR_BAD_REQUEST, ERROR_INTERNAL_ERROR } from '#constants/errors'
 
 type ErrorMapCodes = Record<string, string>
 
@@ -40,9 +40,9 @@ function getErrorCode(exception: unknown, codes: ErrorMapCodes): string {
   let errorString: string
 
   const codesMap = defu(codes, {
-    DEFAULT: errors.INTERNAL_ERROR,
-    ZOD: errors.BAD_REQUEST,
-    SQLITE: errors.INTERNAL_ERROR,
+    DEFAULT: ERROR_INTERNAL_ERROR,
+    ZOD: ERROR_BAD_REQUEST,
+    SQLITE: ERROR_INTERNAL_ERROR,
   })
 
   if (Object.hasOwn(codesMap, 'ALL')) {
@@ -77,7 +77,7 @@ function getAdditionErrorData(exception: unknown): Record<string, unknown> {
 export function errorResolver(exception: unknown, codes?: ErrorMapCodes | string) {
   if (!codes) {
     codes = {
-      ALL: errors.INTERNAL_ERROR,
+      ALL: ERROR_INTERNAL_ERROR,
     }
   } else if (typeof codes === 'string') {
     codes = {

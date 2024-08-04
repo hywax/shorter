@@ -10,7 +10,7 @@ export default {
       dark: 'Switch to Dark Mode',
     },
     footer: {
-      copyright: '© {year} Powered by {author} {version}',
+      copyright: '© {year} Shorter by {author} {version}',
       github: 'Github Repository',
       boosty: 'Donate with Boosty',
       personal: 'Visit Personal Website',
@@ -24,8 +24,13 @@ export default {
     codes: {
       400000: 'Bad request',
       400001: 'Invalid user data',
+      400002: 'Invalid email or password',
       401000: 'Unauthorized',
       403000: 'Forbidden',
+      403001: 'Access only for unauthorized users',
+      403002: 'Access only for authorized users',
+      403003: 'Access only for admin',
+      403004: 'Registration is disabled',
       404000: 'Not found',
       409001: 'User with this email already exists',
       500000: 'Internal server error',
