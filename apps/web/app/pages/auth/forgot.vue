@@ -18,7 +18,7 @@
         <UInput v-model="state.email" type="email" size="md" :placeholder="$t('auth.form.email.placeholder')" />
       </UFormGroup>
 
-      <UButton type="submit" size="md" block>
+      <UButton type="submit" size="md" :loading="status === 'pending'" block>
         {{ $t('auth.form.action.forgot') }}
       </UButton>
     </UForm>
@@ -26,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Form, FormSubmitEvent } from '#ui/types'
+import type { Form } from '#ui/types'
 import { type AuthForgotSchema, authForgotSchema } from '#schema'
 
 definePageMeta({
@@ -38,17 +38,19 @@ useHead({
   title: () => $t('auth.forgot.title'),
 })
 
-const { onChangeLocale } = useI18nUtils()
-
 const form = ref<Form<AuthForgotSchema>>()
 const state = reactive({
-  email: '',
+  email: 'test@ta.ru',
 })
 
-function onSubmit(_event: FormSubmitEvent<AuthForgotSchema>) {
+const { status, execute: onSubmit } = useAPI('/api/auth/forgot', {
+  method: 'POST',
+  body: state,
+  immediate: false,
+  watch: false,
+})
 
-}
-
+const { onChangeLocale } = useI18nUtils()
 onChangeLocale(() => {
   form.value?.clear()
 })

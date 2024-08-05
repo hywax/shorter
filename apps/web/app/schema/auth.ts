@@ -12,9 +12,7 @@ export const authRegisterSchema = z.object({
 })
 
 export const authForgotSchema = z.object({
-  name: z.string().min(3),
   email: z.string().email(),
-  password: z.string().min(6),
 })
 
 export type AuthLoginSchema = z.input<typeof authLoginSchema>
