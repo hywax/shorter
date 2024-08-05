@@ -21,6 +21,12 @@ interface AccountDeleteData {
   password: string
 }
 
+/**
+ * Change self account password
+ *
+ * @param data
+ * @returns void
+ */
 export async function accountChangePassword(data: AccountChangePasswordData): Promise<void> {
   const db = useDatabase()
   const changePasswordSchema = z.object({
@@ -49,6 +55,12 @@ export async function accountChangePassword(data: AccountChangePasswordData): Pr
     .where(eq(tables.users.id, userId))
 }
 
+/**
+ * Change self account general information
+ *
+ * @param data
+ * @returns void
+ */
 export async function changeGeneralInfo(data: AccountGeneralData): Promise<void> {
   const db = useDatabase()
   const changeGeneralInfoSchema = z.object({
@@ -71,6 +83,12 @@ export async function changeGeneralInfo(data: AccountGeneralData): Promise<void>
     .where(eq(tables.users.id, userId))
 }
 
+/**
+ * Delete self account
+ *
+ * @param data
+ * @returns void
+ */
 export async function accountDelete(data: AccountDeleteData): Promise<void> {
   const db = useDatabase()
   const deleteAccountSchema = z.object({
