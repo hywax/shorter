@@ -27,7 +27,7 @@ Shorter is a URL shortener service that allows you to shorten long URLs into sho
 
 ## Contributing
 
-A huge thank you to everyone who is helping to improve Shorter. Thanks to you, the project can evolve! See the [ROADMAP](./ROADMAP.md) file for an idea of how the project should evolve.
+A huge thank you to everyone who is helping to improve Shorter. Thanks to you, the project can evolve! See the [roadmap](./ROADMAP.md) file for an idea of how the project should evolve.
 
 Here are some ways you can contribute:
 

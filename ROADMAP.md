@@ -7,7 +7,7 @@ This file provides an overview of the direction this project is heading. The roa
 Auth is the first step in the roadmap. It includes all the features related to authentication and authorization.
 
 - [x] Login page
-- [ ] Register page
+- [x] Register page
 - [ ] Forgot password page
 
 ## Account
