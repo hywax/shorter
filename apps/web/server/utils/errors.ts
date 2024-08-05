@@ -51,6 +51,11 @@ function getErrorCode(exception: unknown, codes: ErrorMapCodes): string {
     errorString = codesMap.ZOD
   } else if (exception instanceof SqliteError) {
     errorString = Object.hasOwn(codesMap, exception.code) ? codesMap[exception.code]! : codesMap.SQLITE
+  } else if (exception instanceof Error) {
+    const normalizedMessage = exception.message.trim().replaceAll(' ', '_').toUpperCase()
+    const errorMaybeCode = `ERROR_${normalizedMessage}`
+
+    errorString = Object.hasOwn(codesMap, errorMaybeCode) ? codesMap[errorMaybeCode]! : codesMap.DEFAULT
   } else {
     errorString = codesMap.DEFAULT
   }

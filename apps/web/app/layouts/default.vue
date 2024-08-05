@@ -5,7 +5,7 @@
     <main class="flex-1 relative">
       <NuxtErrorBoundary>
         <template #error="{ error }">
-          <UPageError :error="error" class="min-h-full" />
+          <UPageError :error="error" class="min-h-[calc(100vh-129px)]" />
         </template>
 
         <slot />

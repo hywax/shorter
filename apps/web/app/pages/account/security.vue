@@ -1,6 +1,6 @@
 <template>
-  <div>
-    Security not implemented
+  <div class="grid gap-5">
+    <AccountChangePasswordForm />
   </div>
 </template>
 

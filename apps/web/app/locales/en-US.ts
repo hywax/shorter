@@ -25,6 +25,8 @@ export default {
       400000: 'Bad request',
       400001: 'Invalid user data',
       400002: 'Invalid email or password',
+      400003: 'Invalid password data for change',
+      400004: 'Passwords do not match',
       401000: 'Unauthorized',
       403000: 'Forbidden',
       403001: 'Access only for unauthorized users',
@@ -32,6 +34,7 @@ export default {
       403003: 'Access only for admin',
       403004: 'Registration is disabled',
       404000: 'Not found',
+      404001: 'User not found',
       409001: 'User with this email already exists',
       500000: 'Internal server error',
       501000: 'Not implemented',
@@ -45,6 +48,28 @@ export default {
       singed: 'Signed in as',
       settings: 'Settings',
       signOut: 'Sign Out',
+    },
+    changePassword: {
+      title: 'Change Password',
+      description: 'Update your password to keep your account secure.',
+      form: {
+        currentPassword: {
+          label: 'Current Password',
+          placeholder: 'Enter your current password',
+        },
+        newPassword: {
+          label: 'New Password',
+          placeholder: 'Enter your new password',
+        },
+        confirmPassword: {
+          label: 'Confirm Password',
+          placeholder: 'Enter your new password again',
+        },
+        action: {
+          change: 'Change Password',
+          changed: 'Password changed successfully',
+        },
+      },
     },
   },
   auth: {
