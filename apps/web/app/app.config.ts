@@ -13,6 +13,11 @@ export default defineAppConfig({
     gray: 'zinc',
   },
   icons: {
+    account: {
+      settings: 'i-heroicons-cog',
+      security: 'i-heroicons-finger-print',
+      signOut: 'i-heroicons-arrow-left-on-rectangle',
+    },
     error: {
       reload: 'i-heroicons-arrow-path-16-solid',
       backHome: 'i-heroicons-outline-arrow-sm-right',

@@ -38,7 +38,10 @@ export default {
     },
   },
   account: {
-    menu: {
+    title: 'Account',
+    general: 'General',
+    security: 'Security',
+    widget: {
       singed: 'Signed in as',
       settings: 'Settings',
       signOut: 'Sign Out',

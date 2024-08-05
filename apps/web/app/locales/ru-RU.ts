@@ -38,7 +38,10 @@ export default {
     },
   },
   account: {
-    menu: {
+    title: 'Аккаунт',
+    general: 'Общее',
+    security: 'Безопасность',
+    widget: {
       singed: 'Вошли как',
       settings: 'Настройки',
       signOut: 'Выйти',

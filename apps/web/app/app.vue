@@ -22,6 +22,6 @@ useHead({
   },
   link: [...(i18nHead.value.link || [])],
   meta: [...(i18nHead.value.meta || [])],
-  titleTemplate: (productCategory) => productCategory ? `${productCategory} - ${meta.name}` : meta.name,
+  titleTemplate: (title) => title ? `${title} - ${meta.name}` : meta.name,
 })
 </script>

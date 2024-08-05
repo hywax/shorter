@@ -12,7 +12,7 @@
           <ProjectSelector />
         </div>
         <div class="flex items-center space-x-6">
-          <AccountDropdown />
+          <AccountWidget />
         </div>
       </div>
     </UContainer>
