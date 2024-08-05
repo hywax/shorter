@@ -1,5 +1,5 @@
 <template>
-  <UCard>
+  <UCard :ui="{ ring: borderColor }">
     <div v-if="title || description" class="flex flex-col space-y-2 mb-6">
       <h2 v-if="title" class="text-xl font-medium">
         {{ title }}
@@ -28,7 +28,16 @@
 interface Props {
   title?: string
   description?: string
+  color?: 'red'
 }
 
-defineProps<Props>()
+const props = defineProps<Props>()
+
+const borderColor = computed(() => {
+  const colors = {
+    red: 'ring-red-200 dark:ring-red-800',
+  }
+
+  return props.color ? colors[props.color] : undefined
+})
 </script>

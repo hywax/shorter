@@ -61,7 +61,7 @@ import type { Form } from '#ui/types'
 import { type AccountChangePasswordSchema, accountChangePasswordSchema } from '#schema'
 
 const form = ref<Form<AccountChangePasswordSchema>>()
-const state = reactive({
+const state = reactive<AccountChangePasswordSchema>({
   currentPassword: '',
   newPassword: '',
   confirmPassword: '',

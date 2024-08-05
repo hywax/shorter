@@ -10,7 +10,7 @@ export default defineNuxtPlugin((nuxtApp) => {
         await nuxtApp.runWithContext(() => navigateTo('/auth/login'))
       }
 
-      const customCode = response._data.data?.code || 500000
+      const customCode = response._data.data?.code || `${response.status}000`
 
       toast.add({
         title: i18n.t('error.title'),

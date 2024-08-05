@@ -1,6 +1,7 @@
 <template>
-  <div>
-    General not implemented
+  <div class="grid gap-5">
+    <AccountGeneralForm />
+    <AccountDeleteForm />
   </div>
 </template>
 
@@ -10,6 +11,6 @@ definePageMeta({
 })
 
 useHead({
-  title: () => $t('account.general'),
+  title: () => $t('account.general.title'),
 })
 </script>

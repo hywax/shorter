@@ -34,12 +34,15 @@ export default {
       400002: 'Invalid email or password',
       400003: 'Invalid password data for change',
       400004: 'Passwords do not match',
+      400005: 'Invalid account general data',
+      400006: 'Invalid account delete data',
       401000: 'Unauthorized',
       403000: 'Forbidden',
       403001: 'Access only for unauthorized users',
       403002: 'Access only for authorized users',
       403003: 'Access only for admin',
       403004: 'Registration is disabled',
+      403005: 'Account deletion is disabled',
       404000: 'Not found',
       404001: 'User not found',
       409001: 'User with this email already exists',
@@ -49,12 +52,44 @@ export default {
   },
   account: {
     title: 'Account',
-    general: 'General',
     security: 'Security',
     widget: {
       singed: 'Signed in as',
       settings: 'Settings',
       signOut: 'Sign Out',
+    },
+    general: {
+      title: 'General',
+      description: 'Update your account details.',
+      form: {
+        name: {
+          label: 'Name',
+          placeholder: 'Enter your name',
+        },
+        email: {
+          label: 'Email',
+          placeholder: 'Enter your email',
+        },
+        action: {
+          update: 'Update Account',
+          updated: 'Account updated successfully',
+        },
+      },
+    },
+    delete: {
+      title: 'Delete Account',
+      description: 'Permanently delete your account and all associated data.',
+      confirm: 'Are you sure you want to delete your account? This action is irreversible.',
+      form: {
+        password: {
+          label: 'Password',
+          placeholder: 'Enter your password',
+        },
+        action: {
+          delete: 'Delete Account',
+          deleted: 'Account deleted successfully',
+        },
+      },
     },
     appearance: {
       title: 'Appearance',

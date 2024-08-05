@@ -77,7 +77,7 @@ useHead({
 })
 
 const form = ref<Form<AuthRegisterSchema>>()
-const state = reactive({
+const state = reactive<AuthRegisterSchema>({
   name: '',
   email: '',
   password: '',

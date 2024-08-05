@@ -20,6 +20,7 @@ export default defineNuxtConfig({
     baseUrl: '',
     authSessionPassword: '',
     authAllowRegistration: '',
+    accountAllowDelete: '',
     public: {
       disableSponsorLink: '',
       disableSourceLink: '',

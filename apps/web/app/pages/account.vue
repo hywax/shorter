@@ -38,9 +38,9 @@ useHead({
 
 const { icons } = useAppConfig()
 
-const links = [
+const links = computed(() => [
   {
-    label: $t('account.general'),
+    label: $t('account.general.title'),
     icon: icons.account.settings,
     to: '/account',
     exact: true,
@@ -55,5 +55,5 @@ const links = [
     icon: icons.account.security,
     to: '/account/security',
   },
-]
+])
 </script>
