@@ -1,6 +1,7 @@
 # Roadmap
 
-This file provides an overview of the direction this project is heading. The roadmap is organized in steps that focus on a specific theme.
+This file provides an overview of the direction in which the project is heading. The roadmap is organized into phases that focus on a specific topic.
+The result of all the work is a complete application. In which short links can be created.
 
 ## Auth
 
@@ -8,15 +9,15 @@ Auth is the first step in the roadmap. It includes all the features related to a
 
 - [x] Login page
 - [x] Register page
-- [ ] Forgot password page
+- [ ] Forgot password page (After MVP)
 
 ## Account
 
-This section describes the functions related to user account management.
+This section describes the functions related to managing your account.
 
-- [ ] Update account
-- [ ] Change password
-- [ ] Delete account
+- [x] Update account
+- [x] Change password
+- [x] Delete account
 
 ## Dashboard
 
@@ -24,20 +25,21 @@ The dashboard is the main page of the application. It provides an overview of th
 
 ### Projects
 
-- [ ] CRUD operations
-  - [ ] Share project
-  - [ ] Transfer project
-  - [ ] Tags
-    - [ ] CRUD operations
-  - [ ] API keys
+Projects are the main entities in the application. They represent a collection of short links.
+
+- [ ] Share project (After MVP)
+- [ ] Transfer project (After MVP)
+- [ ] Tags (After MVP)
+- [ ] API keys (After MVP)
 
 ### Links
 
-- [ ] CRUD operations
-- [ ] Analytics
+Links are the main entities in the application. They represent a short link that redirects to a specific URL.
+
+- [ ] Analytics (After MVP)
   - [ ] Overview (total clicks, views, etc.)
   - [ ] Export data
-- [ ] Advanced settings
+- [ ] Advanced settings (After MVP)
   - [ ] QR code
   - [ ] Expiration management (time, clicks)
   - [ ] Password protection
@@ -49,6 +51,6 @@ The dashboard is the main page of the application. It provides an overview of th
 
 The documentation is a crucial part of the project. It helps users understand how to use the application and how to integrate it into their projects.
 
-- [ ] API
+- [ ] API (After MVP)
 - [ ] User guide
 - [ ] Developer guide
