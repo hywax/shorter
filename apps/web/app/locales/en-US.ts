@@ -6,8 +6,15 @@ export default {
     },
     colorMode: {
       title: 'Theme',
-      light: 'Switch to Light Mode',
-      dark: 'Switch to Dark Mode',
+      select: 'Select your theme',
+      system: 'System',
+      light: 'Light',
+      dark: 'Dark',
+      switch: {
+        system: 'Switch to System Theme',
+        light: 'Switch to Light Mode',
+        dark: 'Switch to Dark Mode',
+      },
     },
     footer: {
       copyright: '© {year} Shorter by {author} {version}',
@@ -48,6 +55,18 @@ export default {
       singed: 'Signed in as',
       settings: 'Settings',
       signOut: 'Sign Out',
+    },
+    appearance: {
+      title: 'Appearance',
+      description: 'Customize your experience with these settings.',
+      form: {
+        theme: {
+          label: 'Theme',
+        },
+        i18n: {
+          label: 'Language',
+        },
+      },
     },
     changePassword: {
       title: 'Change Password',

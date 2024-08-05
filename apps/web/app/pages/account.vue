@@ -9,7 +9,7 @@
             variant="ghost"
             color="gray"
             size="lg"
-            active-class="bg-gray-50 dark:bg-gray-800"
+            active-class="bg-gray-100 dark:bg-gray-800"
             :to="link.to"
             :exact="link.exact"
             :label="link.label"
@@ -44,6 +44,11 @@ const links = [
     icon: icons.account.settings,
     to: '/account',
     exact: true,
+  },
+  {
+    label: $t('account.appearance.title'),
+    icon: icons.account.appearance,
+    to: '/account/appearance',
   },
   {
     label: $t('account.security'),

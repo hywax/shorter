@@ -2,12 +2,19 @@ export default {
   app: {
     i18n: {
       title: 'Язык',
-      select: 'Выбрать язык интерфейса',
+      select: 'Выберите язык интерфейса',
     },
     colorMode: {
       title: 'Тема',
-      light: 'Переключиться на светлый режим',
-      dark: 'Переключиться на темный режим',
+      select: 'Выберите тему интерфейса',
+      system: 'Системная',
+      light: 'Светлая',
+      dark: 'Темная',
+      switch: {
+        system: 'Переключиться на системную тему',
+        light: 'Переключиться на светлый режим',
+        dark: 'Переключиться на темный режим',
+      },
     },
     footer: {
       copyright: '© {year} Shorter, от {author} {version}',
@@ -48,6 +55,18 @@ export default {
       singed: 'Вошли как',
       settings: 'Настройки',
       signOut: 'Выйти',
+    },
+    appearance: {
+      title: 'Внешний вид',
+      description: 'Настройте ваш опыт использования с помощью этих настроек.',
+      form: {
+        theme: {
+          label: 'Тема',
+        },
+        i18n: {
+          label: 'Язык',
+        },
+      },
     },
     changePassword: {
       title: 'Изменить пароль',

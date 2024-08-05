@@ -15,6 +15,7 @@ export default defineAppConfig({
   icons: {
     account: {
       settings: 'i-heroicons-cog',
+      appearance: 'i-heroicons-paint-brush',
       security: 'i-heroicons-finger-print',
       signOut: 'i-heroicons-arrow-left-on-rectangle',
     },
@@ -27,6 +28,7 @@ export default defineAppConfig({
       github: 'i-simple-icons-github',
     },
     colorMode: {
+      system: 'i-heroicons-computer-desktop-20-solid',
       dark: 'i-heroicons-moon-20-solid',
       light: 'i-heroicons-sun-20-solid',
     },
