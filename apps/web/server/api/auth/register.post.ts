@@ -5,7 +5,7 @@ export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig(event)
 
   if (['false', '0'].includes(config.authAllowRegistration)) {
-    throw errorResolver(null, ERROR_REGISTRATION_DISABLED)
+    throw errorResolver({}, ERROR_REGISTRATION_DISABLED)
   }
 
   try {
