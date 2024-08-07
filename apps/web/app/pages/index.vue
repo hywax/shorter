@@ -1,24 +1,35 @@
 <template>
-  <UPageHeader :title="$t('projects.title')" />
-
+  <UPageHeader :title="$t('projects.title')">
+    <template #action>
+      <UButton
+        :icon="icons.add"
+        :label="$t('projects.create.action')"
+        @click="isProjectCreateModalOpen = true"
+      />
+    </template>
+  </UPageHeader>
   <UContainer>
-    <!-- <PageEmpty
-      icon="i-heroicons:cube-transparent-20-solid"
+    <ProjectsList
+      v-if="projects?.length"
+      :projects="projects"
+    />
+    <UPageEmpty
+      v-else
+      :icon="icons.projects.project"
       :title="$t('projects.greeting.title')"
       :description="$t('projects.greeting.description')"
-    >
-      <template #action>
-        <UButton
-          icon="i-heroicons:plus"
-          :label="$t('projects.create.action')"
-        />
-      </template>
-    </PageEmpty> -->
+    />
   </UContainer>
 </template>
 
 <script setup lang="ts">
+import type { ProjectItem } from '#services/project'
+
 definePageMeta({
   middleware: ['auth'],
 })
+
+const { icons } = useAppConfig()
+const { isProjectCreateModalOpen } = useApp()
+const { data: projects } = await useAPI<ProjectItem[]>('/api/projects')
 </script>
