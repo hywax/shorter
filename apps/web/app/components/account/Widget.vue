@@ -1,6 +1,6 @@
 <template>
   <UDropdown :items="items" :ui="{ item: { disabled: 'cursor-text select-text' } }" :popper="{ placement: 'bottom-end' }">
-    <UAvatar :alt="user?.name" size="md" />
+    <UAvatar :alt="user?.name" :src="getAvatarUrl(user?.name)" size="md" />
 
     <template #account="{ item }">
       <div class="text-left">
@@ -17,6 +17,7 @@
 
 <script setup lang="ts">
 const { icons } = useAppConfig()
+const { isHelpSlideoverOpen } = useApp()
 const { clear: singOut, user } = useUserSession()
 
 const items = computed(() => [
@@ -28,6 +29,13 @@ const items = computed(() => [
     label: $t('account.widget.settings'),
     icon: icons.account.settings,
     to: '/account',
+  }], [{
+    label: $t('account.widget.shortcuts'),
+    icon: icons.account.shortcuts,
+    shortcuts: ['?'],
+    click: () => {
+      isHelpSlideoverOpen.value = true
+    },
   }], [{
     label: $t('account.widget.signOut'),
     icon: icons.account.signOut,

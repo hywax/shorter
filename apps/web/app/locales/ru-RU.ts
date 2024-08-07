@@ -22,6 +22,31 @@ export default {
       boosty: 'Донат на Boosty',
       personal: 'Перейти на личный сайт',
     },
+    shortcuts: {
+      title: 'Горячие клавиши',
+      general: {
+        title: 'Общее',
+        shortcuts: 'Открыть меню горячих клавиш',
+        createProject: 'Создать новый проект',
+      },
+      projects: {
+        title: 'Проекты',
+        createLink: 'Создать новую ссылку',
+        link: 'Открыть ссылки проекта',
+        analytics: 'Открыть аналитику проекта',
+        events: 'Открыть события проекта',
+        settings: 'Открыть настройки проекта',
+      },
+    },
+    messages: {
+      notImplemented: {
+        title: 'Упс, тут ничего нет :(',
+        message1: 'Эта функция еще не реализована. Этот проект предоставляется бесплатно без подписок или платежей.',
+        message2: 'Чтобы ускорить разработку, поддержите проект пожертвованиями или внесением вклада в код.',
+        donate: 'Донат на Boosty',
+        contribute: 'Открыть GitHub',
+      },
+    },
   },
   error: {
     title: 'Ошибка',
@@ -56,6 +81,7 @@ export default {
     widget: {
       singed: 'Вошли как',
       settings: 'Настройки',
+      shortcuts: 'Горячие клавиши',
       signOut: 'Выйти',
     },
     general: {
@@ -172,8 +198,8 @@ export default {
   projects: {
     title: 'Проекты',
     selector: {
-      view: 'Просмотреть все',
-      add: 'Добавить новый проект',
+      viewAll: 'Просмотреть все',
+      add: 'Добавить проект',
     },
     create: {
       title: 'Создать новый проект',
@@ -182,7 +208,31 @@ export default {
     },
     greeting: {
       title: 'Создайте свой первый проект',
-      description: 'Создайте свой первый проект, чтобы начать работу',
+      description: 'Начните с создания нового проекта, чтобы начать использовать Shorter.',
+    },
+    links: {
+      title: 'Ссылки',
+    },
+    analytics: {
+      title: 'Аналитика',
+    },
+    events: {
+      title: 'События',
+    },
+    settings: {
+      title: 'Настройки',
+      general: {
+        title: 'Общее',
+        description: 'Обновите данные вашего проекта.',
+      },
+      members: {
+        title: 'Участники',
+        description: 'Управляйте участниками вашего проекта.',
+      },
+      tags: {
+        title: 'Теги',
+        description: 'Управляйте тегами вашего проекта.',
+      },
     },
   },
 }

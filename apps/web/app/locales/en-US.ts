@@ -22,6 +22,31 @@ export default {
       boosty: 'Donate with Boosty',
       personal: 'Visit Personal Website',
     },
+    shortcuts: {
+      title: 'Shortcuts',
+      general: {
+        title: 'General',
+        shortcuts: 'Open shortcuts menu',
+        createProject: 'Create a new project',
+      },
+      projects: {
+        title: 'Projects',
+        createLink: 'Create a new link',
+        link: 'Open project links',
+        analytics: 'Open project analytics',
+        events: 'Open project events',
+        settings: 'Open project settings',
+      },
+    },
+    messages: {
+      notImplemented: {
+        title: 'Oops, nothing here :(',
+        message1: 'This feature has not yet been implemented. This project is delivered free of charge without subscriptions or payment.',
+        message2: 'To speed up the development, support the project with donations or by contributing to the code.',
+        donate: 'Donate with Boosty',
+        contribute: 'Open GitHub',
+      },
+    },
   },
   error: {
     title: 'Error',
@@ -56,6 +81,7 @@ export default {
     widget: {
       singed: 'Signed in as',
       settings: 'Settings',
+      shortcuts: 'Shortcuts',
       signOut: 'Sign Out',
     },
     general: {
@@ -172,7 +198,7 @@ export default {
   projects: {
     title: 'Projects',
     selector: {
-      view: 'View All',
+      viewAll: 'View All',
       add: 'Add a new project',
     },
     create: {
@@ -182,7 +208,31 @@ export default {
     },
     greeting: {
       title: 'Create your first project',
-      description: 'Create your first project to get started',
+      description: 'Get started by creating a new project.',
+    },
+    links: {
+      title: 'Links',
+    },
+    analytics: {
+      title: 'Analytics',
+    },
+    events: {
+      title: 'Events',
+    },
+    settings: {
+      title: 'Settings',
+      general: {
+        title: 'General',
+        description: 'Update your project details.',
+      },
+      members: {
+        title: 'Members',
+        description: 'Manage your project members.',
+      },
+      tags: {
+        title: 'Tags',
+        description: 'Manage your project tags.',
+      },
     },
   },
 }
