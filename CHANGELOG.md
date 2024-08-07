@@ -1,6 +1,48 @@
 # Changelog
 
 
+## v0.0.4
+
+[compare changes](https://github.com/hywax/shorter/compare/v0.0.3...v0.0.4)
+
+### 🚀 Enhancements
+
+- Create projects ([795d1e9](https://github.com/hywax/shorter/commit/795d1e9))
+- Shortcuts ([3873e84](https://github.com/hywax/shorter/commit/3873e84))
+
+### 🩹 Fixes
+
+- Error resolver args call ([0e27fe0](https://github.com/hywax/shorter/commit/0e27fe0))
+
+### 💅 Refactors
+
+- Optimize header ([b8b39cc](https://github.com/hywax/shorter/commit/b8b39cc))
+- Auth separated view from logic ([89aa092](https://github.com/hywax/shorter/commit/89aa092))
+- Optimize components ([abb2d3c](https://github.com/hywax/shorter/commit/abb2d3c))
+
+### 📖 Documentation
+
+- Description of ui components ([d5c85ce](https://github.com/hywax/shorter/commit/d5c85ce))
+- Update roadmap ([ad67f8b](https://github.com/hywax/shorter/commit/ad67f8b))
+- Update roadmap ([e2b4644](https://github.com/hywax/shorter/commit/e2b4644))
+- Jsdoc account service ([0611074](https://github.com/hywax/shorter/commit/0611074))
+
+### 🏡 Chore
+
+- Connect forgot to backend ([afb983f](https://github.com/hywax/shorter/commit/afb983f))
+- Create account page skeleton ([b68c7bb](https://github.com/hywax/shorter/commit/b68c7bb))
+- Remove account widget slot items ([1a4710d](https://github.com/hywax/shorter/commit/1a4710d))
+- Create account change password form ([a27ae4f](https://github.com/hywax/shorter/commit/a27ae4f))
+- Create page components ([28ae719](https://github.com/hywax/shorter/commit/28ae719))
+- Create account appearance form ([836ffeb](https://github.com/hywax/shorter/commit/836ffeb))
+- Create account general form ([cb75eec](https://github.com/hywax/shorter/commit/cb75eec))
+- Create message not implemented ([a0fbd11](https://github.com/hywax/shorter/commit/a0fbd11))
+- Home page list projects ([1e7be5a](https://github.com/hywax/shorter/commit/1e7be5a))
+
+### ❤️ Contributors
+
+- Hywax ([@hywax](http://github.com/hywax))
+
 ## v0.0.3
 
 [compare changes](https://github.com/hywax/shorter/compare/v0.0.2...v0.0.3)
