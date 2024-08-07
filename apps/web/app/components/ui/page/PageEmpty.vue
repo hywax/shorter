@@ -13,7 +13,7 @@
         </slot>
       </div>
 
-      <div v-if="description || $slots.description" class="text-[15px] text-gray-500 dark:text-gray-400 mt-2">
+      <div v-if="description || $slots.description" class="text-[15px] text-center text-gray-500 dark:text-gray-400 mt-2">
         <slot name="description">
           {{ description }}
         </slot>

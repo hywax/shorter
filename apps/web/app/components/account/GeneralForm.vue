@@ -17,7 +17,6 @@
         >
           <UInput
             v-model="state.name"
-            size="md"
             :placeholder="$t('account.general.form.name.placeholder')"
           />
         </UFormGroup>
@@ -28,13 +27,12 @@
         >
           <UInput
             v-model="state.email"
-            size="md"
             :placeholder="$t('account.general.form.email.placeholder')"
           />
         </UFormGroup>
       </div>
       <template #footer-left>
-        <UButton size="lg" type="submit" :loading="status === 'pending'">
+        <UButton type="submit" :loading="status === 'pending'">
           {{ $t('account.general.form.action.update') }}
         </UButton>
       </template>
@@ -63,7 +61,7 @@ setStateFromSession()
 
 const toast = useToast()
 const { status, execute: onSubmit } = useAPI('/api/account', {
-  method: 'PUT',
+  method: 'put',
   body: state,
   immediate: false,
   watch: false,

@@ -17,7 +17,6 @@
         >
           <UInput
             v-model="state.currentPassword"
-            size="md"
             type="password"
             :placeholder="$t('account.changePassword.form.currentPassword.placeholder')"
           />
@@ -29,7 +28,6 @@
         >
           <UInput
             v-model="state.newPassword"
-            size="md"
             type="password"
             :placeholder="$t('account.changePassword.form.newPassword.placeholder')"
           />
@@ -41,14 +39,13 @@
         >
           <UInput
             v-model="state.confirmPassword"
-            size="md"
             type="password"
             :placeholder="$t('account.changePassword.form.confirmPassword.placeholder')"
           />
         </UFormGroup>
       </div>
       <template #footer-left>
-        <UButton size="lg" type="submit" :loading="status === 'pending'">
+        <UButton type="submit" :loading="status === 'pending'">
           {{ $t('account.changePassword.form.action.change') }}
         </UButton>
       </template>
@@ -69,7 +66,7 @@ const state = reactive<AccountChangePasswordSchema>({
 
 const toast = useToast()
 const { status, execute: onSubmit } = useAPI('/api/account/change-password', {
-  method: 'PUT',
+  method: 'put',
   body: state,
   immediate: false,
   watch: false,

@@ -17,7 +17,7 @@
         @click="reloadPage"
       />
       <UButton
-        v-if="error.statusCode === 404"
+        v-if="[403, 404].includes(error.statusCode)"
         color="white"
         variant="ghost"
         size="lg"

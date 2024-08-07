@@ -25,7 +25,7 @@
         </div>
       </div>
       <div class="flex-1 flex items-center justify-end gap-x-1.5">
-        <!-- <UTooltip
+        <UTooltip
           v-if="$config.public.disableSponsorLink !== 'false'"
           :text="$t('app.footer.boosty')"
         >
@@ -37,7 +37,7 @@
             :icon="icons.social.boosty"
             :aria-label="$t('app.footer.boosty')"
           />
-        </UTooltip> -->
+        </UTooltip>
         <UTooltip
           v-if="!['true', '1'].includes($config.public.disableSourceLink)"
           :text="$t('app.footer.github')"

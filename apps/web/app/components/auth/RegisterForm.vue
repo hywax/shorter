@@ -76,7 +76,7 @@ const state = reactive<AuthRegisterSchema>({
 
 const { fetch: refreshSession } = useUserSession()
 const { status, execute: onSubmit } = useAPI('/api/auth/register', {
-  method: 'POST',
+  method: 'post',
   body: state,
   immediate: false,
   watch: false,

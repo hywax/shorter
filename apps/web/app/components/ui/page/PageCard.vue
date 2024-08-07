@@ -35,7 +35,7 @@ const props = defineProps<Props>()
 
 const borderColor = computed(() => {
   const colors = {
-    red: 'ring-red-200 dark:ring-red-800',
+    red: 'ring-red-200 dark:ring-red-900',
   }
 
   return props.color ? colors[props.color] : undefined

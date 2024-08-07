@@ -35,7 +35,7 @@ const state = reactive<AuthForgotSchema>({
 })
 
 const { status, execute: onSubmit } = useAPI('/api/auth/forgot', {
-  method: 'POST',
+  method: 'post',
   body: state,
   immediate: false,
   watch: false,

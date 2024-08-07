@@ -58,7 +58,7 @@ const state = reactive<AuthLoginSchema>({
 
 const { fetch: refreshSession } = useUserSession()
 const { status, execute: onSubmit } = useAPI('/api/auth/login', {
-  method: 'POST',
+  method: 'post',
   body: state,
   immediate: false,
   watch: false,

@@ -29,13 +29,12 @@
             >
               <UInput
                 v-model="state.password"
-                size="md"
                 type="password"
                 :placeholder="$t('account.delete.form.password.placeholder')"
               />
             </UFormGroup>
             <UFormGroup>
-              <UButton type="submit" size="lg" color="red" :loading="status === 'pending'">
+              <UButton type="submit" color="red" :loading="status === 'pending'">
                 {{ $t('account.delete.form.action.delete') }}
               </UButton>
             </UFormGroup>
@@ -45,7 +44,7 @@
     </UModal>
 
     <template #footer-left>
-      <UButton size="lg" color="red" @click="modalIsOpen = true">
+      <UButton color="red" @click="modalIsOpen = true">
         {{ $t('account.delete.form.action.delete') }}
       </UButton>
     </template>
@@ -66,7 +65,7 @@ const state = reactive<AccountDeleteSchema>({
 
 const toast = useToast()
 const { status, execute: onSubmit } = useAPI('/api/account', {
-  method: 'DELETE',
+  method: 'delete',
   body: state,
   immediate: false,
   watch: false,

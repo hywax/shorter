@@ -5,6 +5,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   const i18n = nuxtApp.$i18n as Composer
 
   const api = $fetch.create({
+    headers: useRequestHeaders(['cookie']),
     async onResponseError({ response }) {
       if (response.status === 401) {
         await nuxtApp.runWithContext(() => navigateTo('/auth/login'))
