@@ -3,7 +3,9 @@ import bcrypt from 'bcrypt'
 import { eq } from 'drizzle-orm'
 import { z } from 'zod'
 import { tables, useDatabase, userDraftSchema } from '#db'
-import type { User, UserDraft, UserSafe } from '#db'
+import type { User, UserDraft } from '#db'
+
+export type UserSafe = Omit<User, 'password'>
 
 /**
  * Transform User to UserSafe

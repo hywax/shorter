@@ -1,4 +1,5 @@
 import { updateUserOnlineStatus } from '#services/user'
+import { getProjectsAvailableList } from '#services/project'
 
 export default defineNitroPlugin(() => {
   sessionHooks.hook('fetch', async (session) => {
@@ -6,5 +7,10 @@ export default defineNitroPlugin(() => {
      * Since the `updateUserOnlineStatus` method returns a user, based on it, we can take the actual data model.
      */
     session.user = await updateUserOnlineStatus(session.user.id)
+
+    /**
+     * We get the list of projects available to the user and add it to the session.
+     */
+    session.projects = await getProjectsAvailableList(session.user.id)
   })
 })

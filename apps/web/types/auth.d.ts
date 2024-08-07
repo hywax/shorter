@@ -8,8 +8,15 @@ declare module '#auth-utils' {
     createdAt: Date | null
   }
 
+  interface Project {
+    id: string
+    name: string
+    role: 'owner' | 'member'
+  }
+
   interface UserSession {
     user: User
+    projects: Project[]
   }
 }
 

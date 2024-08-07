@@ -1,5 +1,6 @@
-import { sqliteTable, text } from 'drizzle-orm/sqlite-core'
-import { dateField, idField } from './utils'
+import { relations } from 'drizzle-orm'
+import { primaryKey, sqliteTable, text } from 'drizzle-orm/sqlite-core'
+import { dateField, foreignIdField, idField } from './utils'
 
 export const users = sqliteTable('users', {
   id: idField('id'),
@@ -10,3 +11,38 @@ export const users = sqliteTable('users', {
   onlineAt: dateField('online_at'),
   createdAt: dateField('created_at', true),
 })
+
+export const projects = sqliteTable('projects', {
+  id: idField('id'),
+  name: text('name').notNull(),
+  description: text('description'),
+  createdAt: dateField('created_at', true),
+})
+
+export const projectsUsers = sqliteTable('projects_users', {
+  projectId: foreignIdField('project_id').references(() => projects.id, { onDelete: 'cascade', onUpdate: 'cascade' }),
+  userId: foreignIdField('user_id').references(() => users.id, { onDelete: 'cascade', onUpdate: 'cascade' }),
+  role: text('role', { enum: ['owner', 'member'] }).default('member').notNull(),
+  joinedAt: dateField('joined_at', true),
+}, (t) => ({
+  pk: primaryKey({ columns: [t.projectId, t.userId] }),
+}))
+
+export const usersRelations = relations(users, ({ many }) => ({
+  projects: many(projectsUsers),
+}))
+
+export const projectsRelations = relations(projects, ({ many }) => ({
+  users: many(projectsUsers),
+}))
+
+export const projectsUsersRelations = relations(projectsUsers, ({ one }) => ({
+  project: one(projects, {
+    fields: [projectsUsers.projectId],
+    references: [projects.id],
+  }),
+  user: one(users, {
+    fields: [projectsUsers.userId],
+    references: [users.id],
+  }),
+}))

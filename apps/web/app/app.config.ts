@@ -13,11 +13,29 @@ export default defineAppConfig({
     gray: 'zinc',
   },
   icons: {
+    add: 'i-heroicons-plus',
+    arrowRight: 'i-heroicons-outline-arrow-sm-right',
+    message: 'i-heroicons-chat-bubble-oval-left-ellipsis',
     account: {
+      shortcuts: 'i-heroicons-command-line',
       settings: 'i-heroicons-cog',
       appearance: 'i-heroicons-paint-brush',
       security: 'i-heroicons-finger-print',
       signOut: 'i-heroicons-arrow-left-on-rectangle',
+    },
+    projects: {
+      project: 'i-heroicons:cube-transparent-20-solid',
+      links: 'i-heroicons-link',
+      clicks: 'i-heroicons-cursor-arrow-rays',
+      analytics: 'i-heroicons-chart-pie',
+      events: 'i-heroicons-calendar',
+      settings: 'i-heroicons-cog',
+      members: 'i-heroicons-users',
+      tags: 'i-heroicons-tag',
+      selector: {
+        dropdown: 'i-heroicons-chevron-up-down',
+        add: 'i-heroicons-plus-circle',
+      },
     },
     error: {
       reload: 'i-heroicons-arrow-path-16-solid',

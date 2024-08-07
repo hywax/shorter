@@ -9,6 +9,10 @@ export function idField(name: string) {
     .$defaultFn(() => createId())
 }
 
+export function foreignIdField(name: string) {
+  return text(name).notNull()
+}
+
 export function dateField(name: string, defaultCurrentTimestamp = false) {
   const filed = integer(name, { mode: 'timestamp' })
 

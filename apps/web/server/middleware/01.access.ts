@@ -8,6 +8,7 @@ export default defineEventHandler(async (event) => {
   const protectedRoutes: string[] = [
     '/api/users*',
     '/api/account*',
+    '/api/projects*',
   ]
 
   const session = await getUserSession(event)
