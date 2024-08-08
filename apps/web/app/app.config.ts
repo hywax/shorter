@@ -14,7 +14,7 @@ export default defineAppConfig({
   },
   icons: {
     add: 'i-heroicons-plus',
-    arrowRight: 'i-heroicons-outline-arrow-sm-right',
+    arrowRight: 'i-heroicons-arrow-long-right',
     message: 'i-heroicons-chat-bubble-oval-left-ellipsis',
     account: {
       shortcuts: 'i-heroicons-command-line',
@@ -39,7 +39,7 @@ export default defineAppConfig({
     },
     error: {
       reload: 'i-heroicons-arrow-path-16-solid',
-      backHome: 'i-heroicons-outline-arrow-sm-right',
+      backHome: 'i-heroicons-arrow-long-right',
     },
     social: {
       boosty: 'i-simple-icons-boosty',
