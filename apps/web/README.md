@@ -7,7 +7,8 @@
 | APP_ACCOUNT_ALLOW_DELETE    | `false`      | Allow users to delete their account                                  |
 | APP_DISABLE_SPONSOR_LINK    | `false`      | Disable sponsor link in footer                                       |
 | APP_DISABLE_SOURCE_LINK     | `false`      | Disable source link in footer                                        |
-| APP_EMAIL_SERVICE           | `null`       | Email service to use for sending emails, e.g. `gmail`, `yandex` ...  |
+| APP_EMAIL_HOST              | `null`       | Email server address                                                 |
+| APP_EMAIL_PORT              | `null`       | Email server port                                                    |
 | APP_EMAIL_FROM              | `null`       | Email address to send emails from                                    |
-| APP_EMAIL_AUTH_USER         | `null`       | Email service username                                               |
-| APP_EMAIL_AUTH_PASSWORD     | `null`       | Email service password                                               |
+| APP_EMAIL_AUTH_USER         | `null`       | Email login                                                          |
+| APP_EMAIL_AUTH_PASSWORD     | `null`       | Email password                                                       |

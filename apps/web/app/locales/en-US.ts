@@ -68,6 +68,7 @@ export default {
       403003: 'Access only for admin',
       403004: 'Registration is disabled',
       403005: 'Account deletion is disabled',
+      403006: 'Email agent credentials error',
       404000: 'Not found',
       404001: 'User not found',
       409001: 'User with this email already exists',

@@ -7,10 +7,10 @@ export async function renderTemplate(options: Templates): Promise<string> {
 
   switch (options.template) {
     case 'change-password':
-      html = changePasswordTemplate(options)
+      html = changePasswordTemplate(options.params)
       break
     case 'project-invite':
-      html = projectsInviteTemplate(options)
+      html = projectsInviteTemplate(options.params)
       break
     default:
       throw new Error('Unknown template')

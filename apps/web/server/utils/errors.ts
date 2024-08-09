@@ -2,6 +2,7 @@ import { ZodError } from 'zod'
 import { SqliteError } from 'better-sqlite3'
 import defu from 'defu'
 import { ERROR_BAD_REQUEST, ERROR_INTERNAL_ERROR } from '#constants/errors'
+import { EmailError } from '#core/email'
 
 type ErrorMapCodes = Record<string, string>
 
@@ -43,6 +44,7 @@ function getErrorCode(exception: unknown, codes: ErrorMapCodes): string {
     DEFAULT: ERROR_INTERNAL_ERROR,
     ZOD: ERROR_BAD_REQUEST,
     SQLITE: ERROR_INTERNAL_ERROR,
+    EMAIL: ERROR_INTERNAL_ERROR,
   })
 
   if (Object.hasOwn(codesMap, 'ALL')) {
@@ -51,6 +53,8 @@ function getErrorCode(exception: unknown, codes: ErrorMapCodes): string {
     errorString = codesMap.ZOD
   } else if (exception instanceof SqliteError) {
     errorString = Object.hasOwn(codesMap, exception.code) ? codesMap[exception.code]! : codesMap.SQLITE
+  } else if (exception instanceof EmailError) {
+    errorString = Object.hasOwn(codesMap, exception.code) ? codesMap[exception.code]! : codesMap.EMAIL
   } else if (exception instanceof Error) {
     const normalizedMessage = exception.message.trim().replaceAll(' ', '_').toUpperCase()
     const errorMaybeCode = `ERROR_${normalizedMessage}`

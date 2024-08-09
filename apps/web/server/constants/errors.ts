@@ -12,6 +12,7 @@ export const ERROR_ACCESS_ONLY_AUTHORIZED = '403002: Access only for authorized 
 export const ERROR_ACCESS_ONLY_ADMIN = '403003: Access only for admin'
 export const ERROR_REGISTRATION_DISABLED = '403004: Registration is disabled'
 export const ERROR_DELETE_ACCOUNT_DISABLED = '403005: Account deletion is disabled'
+export const ERROR_EMAIL_CREDENTIALS = '403006: Email agent credentials error'
 export const ERROR_NOT_FOUND = '404000: Not found'
 export const ERROR_USER_NOT_FOUND = '404001: User not found'
 export const ERROR_USER_ALL_READY_EXISTS = '409001: User with this email already exists'
