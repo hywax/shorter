@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "jsxImportSource": "vue",
+    "lib": [
+      "ESNext",
+      "dom",
+      "dom.iterable"
+    ],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noEmit": true,
+    "noEmitOnError": false,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "pretty": true
+  },
+  "include": ["src/**/*", "types/**/*"],
+  "exclude": ["dist", "node_modules", "test/types"]
+}

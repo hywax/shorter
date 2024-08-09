@@ -1,0 +1,40 @@
+{
+  "name": "@shorter/email-templates",
+  "type": "module",
+  "private": true,
+  "exports": {
+    "types": "./types/index.d.ts",
+    "import": "./dist/email-templates.js",
+    "default": "./dist/email-templates.js"
+  },
+  "main": "./dist/email-templates.js",
+  "module": "./dist/email-templates.js",
+  "files": [
+    "dist",
+    "types"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "clean": "rm -rf dist",
+    "clean:modules": "rm -rf .turbo node_modules",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "peerDependencies": {
+    "eslint": "^9.7.0"
+  },
+  "dependencies": {
+    "@vue-email/components": "^0.0.19",
+    "@vue-email/render": "^0.0.9",
+    "vue": "^3.4.37"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.23.1",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/node": "^22.1.0",
+    "@vitejs/plugin-vue": "^5.1.2",
+    "@vue/compiler-sfc": "^3.4.37",
+    "eslint": "^9.7.0",
+    "vite": "^5.4.0"
+  }
+}
