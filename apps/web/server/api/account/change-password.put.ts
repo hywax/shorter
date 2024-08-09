@@ -1,5 +1,5 @@
 import { ERROR_ACCOUNT_PASSWORD_INVALID_DATA, ERROR_ACCOUNT_PASSWORD_NOT_MATCH } from '#constants/errors'
-import { accountChangePassword } from '#services/account'
+import { accountChangePassword } from '#core/services/account'
 
 export default defineEventHandler(async (event) => {
   try {

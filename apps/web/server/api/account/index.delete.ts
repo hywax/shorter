@@ -1,5 +1,5 @@
 import { ERROR_ACCOUNT_DELETE_INVALID_DATA, ERROR_DELETE_ACCOUNT_DISABLED } from '#constants/errors'
-import { accountDelete } from '#services/account'
+import { accountDelete } from '#core/services/account'
 
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig(event)

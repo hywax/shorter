@@ -1,4 +1,6 @@
+import { readdirSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
+import handlebars from '@shorter/rollup-plugin-handlebars'
 
 export default defineNuxtConfig({
   devtools: {
@@ -21,6 +23,10 @@ export default defineNuxtConfig({
     authSessionPassword: '',
     authAllowRegistration: '',
     accountAllowDelete: '',
+    emailService: '',
+    emailFrom: '',
+    emailAuthUser: '',
+    emailAuthPassword: '',
     public: {
       disableSponsorLink: '',
       disableSourceLink: '',
@@ -28,9 +34,8 @@ export default defineNuxtConfig({
   },
   alias: {
     '#schema': fileURLToPath(new URL('./app/schema/index', import.meta.url)),
-    '#db': fileURLToPath(new URL('./server/database/index', import.meta.url)),
-    '#services': fileURLToPath(new URL('./server/services', import.meta.url)),
     '#constants': fileURLToPath(new URL('./server/constants', import.meta.url)),
+    ...generateCoreAlias(),
   },
   components: [
     { path: '~/components/ui', prefix: 'U', pathPrefix: false },
@@ -56,7 +61,7 @@ export default defineNuxtConfig({
     strategy: 'no_prefix',
     defaultLocale: 'en',
     experimental: {
-      // localeDetector: fileURLToPath(new URL('./server/i18n/localeDetector.ts', import.meta.url)),
+      // localeDetector: fileURLToPath(new URL('./server/lib/i18n/localeDetector.ts', import.meta.url)),
       autoImportTranslationFunctions: true,
     },
     detectBrowserLanguage: {
@@ -76,8 +81,13 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/css/main.css'],
   nitro: {
+    preset: fileURLToPath(new URL('./server/preset.ts', import.meta.url)),
     experimental: {
       tasks: true,
+    },
+    rollupConfig: {
+      // @ts-expect-error error on the part of nitrojs, code works, todo remove ts-expect-error
+      plugins: [handlebars()],
     },
   },
   compatibilityDate: '2024-08-04',
@@ -91,3 +101,28 @@ export default defineNuxtConfig({
    */
   ssr: true,
 })
+
+/**
+ * Generate core alias
+ */
+function generateCoreAlias() {
+  const exclude = ['i18n']
+  const everything = ['services']
+
+  const map: Record<string, string> = {}
+  const core = readdirSync('./server/core')
+
+  for (const item of everything) {
+    map[`#core/${item}`] = fileURLToPath(new URL(`./server/core/${item}`, import.meta.url))
+  }
+
+  for (const item of core) {
+    if (exclude.includes(item) || everything.includes(item)) {
+      continue
+    }
+
+    map[`#core/${item}`] = fileURLToPath(new URL(`./server/core/${item}/index`, import.meta.url))
+  }
+
+  return map
+}

@@ -1,5 +1,5 @@
 import { ERROR_ACCOUNT_GENERAL_INVALID_DATA, ERROR_USER_ALL_READY_EXISTS } from '#constants/errors'
-import { changeGeneralInfo } from '#services/account'
+import { changeGeneralInfo } from '#core/services/account'
 
 export default defineEventHandler(async (event) => {
   try {

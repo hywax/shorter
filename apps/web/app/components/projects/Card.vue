@@ -46,7 +46,7 @@
 </template>
 
 <script setup lang="ts">
-import type { ProjectItem } from '#services/project'
+import type { ProjectItem } from '#core/services/project'
 
 defineProps<{
   project: ProjectItem

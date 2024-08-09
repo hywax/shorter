@@ -1,4 +1,4 @@
-import { getUsersList } from '#services/user'
+import { getUsersList } from '#core/services/user'
 
 export default defineEventHandler(async () => {
   try {

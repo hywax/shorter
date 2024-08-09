@@ -1,4 +1,4 @@
-import { createUser, getUsersList } from '#services/user'
+import { createUser, getUsersList } from '#core/services/user'
 
 /**
  * This task is necessary for initial database configuration.

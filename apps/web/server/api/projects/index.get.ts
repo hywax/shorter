@@ -1,4 +1,4 @@
-import { getProjectsAvailableIds, getProjectsList } from '#services/project'
+import { getProjectsAvailableIds, getProjectsList } from '#core/services/project'
 
 export default defineEventHandler(async (event) => {
   try {

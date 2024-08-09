@@ -1,9 +1,9 @@
-import omit from 'lodash/omit'
+import { omit } from 'lodash-es'
 import bcrypt from 'bcrypt'
 import { eq } from 'drizzle-orm'
 import { z } from 'zod'
-import { tables, useDatabase, userDraftSchema } from '#db'
-import type { User, UserDraft } from '#db'
+import { tables, useDatabase, userDraftSchema } from '#core/database'
+import type { User, UserDraft } from '#core/database'
 
 export type UserSafe = Omit<User, 'password'>
 

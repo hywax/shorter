@@ -1,6 +1,6 @@
 import { ERROR_USER_INVALID_CREDENTIALS, ERROR_USER_INVALID_DATA } from '#constants/errors'
-import { validateUserCredentials } from '#services/user'
-import { getProjectsAvailableList } from '#services/project'
+import { validateUserCredentials } from '#core/services/user'
+import { getProjectsAvailableList } from '#core/services/project'
 
 export default defineEventHandler(async (event) => {
   try {

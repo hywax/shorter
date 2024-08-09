@@ -1,7 +1,7 @@
 import { resolve } from 'node:path'
 import process from 'node:process'
 import { migrate } from 'drizzle-orm/better-sqlite3/migrator'
-import { useDatabase } from '#db'
+import { useDatabase } from '#core/database'
 
 /**
  * Run database migrations
@@ -15,7 +15,7 @@ export default defineTask({
     const db = useDatabase()
 
     migrate(db, {
-      migrationsFolder: resolve(process.cwd(), 'server/database/migrations'),
+      migrationsFolder: resolve(process.cwd(), `server${import.meta.dev ? '/core' : ''}/database/migrations`),
     })
 
     return {

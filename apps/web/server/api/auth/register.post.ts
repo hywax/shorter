@@ -1,6 +1,6 @@
 import { ERROR_REGISTRATION_DISABLED, ERROR_USER_ALL_READY_EXISTS, ERROR_USER_INVALID_DATA } from '#constants/errors'
-import { createUser } from '#services/user'
-import { getProjectsAvailableList } from '#services/project'
+import { createUser } from '#core/services/user'
+import { getProjectsAvailableList } from '#core/services/project'
 
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig(event)
