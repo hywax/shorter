@@ -70,8 +70,8 @@ export default defineNuxtConfig({
       alwaysRedirect: true,
     },
     locales: [
-      { code: 'en', iso: 'en-US', name: 'English', file: 'en-US.ts' },
-      { code: 'ru', iso: 'ru-RU', name: 'Русский', file: 'ru-RU.ts' },
+      { code: 'en', iso: 'en-US', name: 'English', file: 'en-US.json' },
+      { code: 'ru', iso: 'ru-RU', name: 'Русский', file: 'ru-RU.json' },
     ],
   },
   zodI18n: {
