@@ -1,6 +1,36 @@
 # Changelog
 
 
+## v0.2.0
+
+[compare changes](https://github.com/hywax/shorter/compare/v0.1.0...v0.2.0)
+
+### 🚀 Enhancements
+
+- ⚠️  Password reset ([b828223](https://github.com/hywax/shorter/commit/b828223))
+
+### 🩹 Fixes
+
+- Drizzle config database dirs ([64d2432](https://github.com/hywax/shorter/commit/64d2432))
+- Pnpm run command web check errors ([b4f9776](https://github.com/hywax/shorter/commit/b4f9776))
+
+### 📦 Build
+
+- Install internal packages ([1f275e1](https://github.com/hywax/shorter/commit/1f275e1))
+
+### 🏡 Chore
+
+- Migration of handlebars to a separate npm package ([9389d9a](https://github.com/hywax/shorter/commit/9389d9a))
+- Bump version ([5ae25d7](https://github.com/hywax/shorter/commit/5ae25d7))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️  Password reset ([b828223](https://github.com/hywax/shorter/commit/b828223))
+
+### ❤️ Contributors
+
+- Hywax ([@hywax](http://github.com/hywax))
+
 ## v0.0.4
 
 [compare changes](https://github.com/hywax/shorter/compare/v0.0.3...v0.0.4)
