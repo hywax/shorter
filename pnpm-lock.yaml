@@ -154,6 +154,9 @@ importers:
       '@rollup/plugin-typescript':
         specifier: ^11.1.6
         version: 11.1.6(rollup@4.20.0)(tslib@2.6.3)(typescript@5.5.3)
+      '@shorter/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
       '@types/node':
         specifier: ^22.1.0
         version: 22.1.0
@@ -166,9 +169,6 @@ importers:
       eslint:
         specifier: ^9.7.0
         version: 9.7.0
-      rollup:
-        specifier: ^4.20.0
-        version: 4.20.0
       vite:
         specifier: ^5.4.0
         version: 5.4.0(@types/node@22.1.0)(terser@5.31.3)
@@ -201,6 +201,9 @@ importers:
       '@rollup/plugin-typescript':
         specifier: ^11.1.6
         version: 11.1.6(rollup@4.19.0)(tslib@2.6.3)(typescript@5.5.3)
+      '@shorter/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
       '@types/node':
         specifier: ^22.1.0
         version: 22.1.0
