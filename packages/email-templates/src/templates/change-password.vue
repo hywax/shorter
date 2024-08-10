@@ -11,6 +11,12 @@
         Reset password
       </Button>
     </Text>
+    <Text>
+      Or copy and paste the token below into the form:
+    </Text>
+    <Text class="p-2 rounded-md bg-gray-100">
+      <span v-pre>{{ token }}</span>
+    </Text>
     <Hr class="mt-5" />
     <Text class="text-gray-500">
       This email was intended for <Link href="mailto:{{ emailTo }}" class="text-gray-500 underline">

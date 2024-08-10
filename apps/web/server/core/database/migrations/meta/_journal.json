@@ -15,6 +15,13 @@
       "when": 1722933784926,
       "tag": "0001_massive_dark_phoenix",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1723285632911,
+      "tag": "0002_sour_silver_sable",
+      "breakpoints": true
     }
   ]
 }

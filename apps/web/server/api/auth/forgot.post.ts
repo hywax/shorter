@@ -1,23 +1,31 @@
-import { ERROR_EMAIL_CREDENTIALS, ERROR_NOT_IMPLEMENTED } from '#constants/errors'
+import { ERROR_EMAIL_CREDENTIALS, ERROR_USER_INVALID_DATA, ERROR_USER_NOT_FOUND } from '#constants/errors'
+import { createPasswordReset, findUserByEmail } from '#core/services/user'
+import { useEmail } from '#core/email'
 
-export default defineEventHandler(() => {
-  /**
-   * This route should email the user's email with a link to the password reset page.
-   * After clicking the link, the user should enter a new password.
-   */
-  throw errorResolver({}, {
-    DEFAULT: ERROR_NOT_IMPLEMENTED,
-    EMAIL_BAD_CREDENTIALS: ERROR_EMAIL_CREDENTIALS,
-  })
+export default defineEventHandler(async (event) => {
+  try {
+    const config = useRuntimeConfig(event)
+    const { send } = useEmail()
 
-  // const { send } = useEmail()
-  // send({
-  //   to: '',
-  //   subject: 'Change password',
-  //   template: 'change-password',
-  //   params: {
-  //     resetUrl: '',
-  //     emailTo: '',
-  //   },
-  // })
+    const data = await readBody(event)
+    const user = await findUserByEmail(data.email)
+    const passwordReset = await createPasswordReset(user.id)
+
+    await send({
+      to: user.email,
+      subject: 'Change password',
+      template: 'change-password',
+      params: {
+        resetUrl: `${config.baseUrl}/auth/reset?token=${passwordReset.token}`,
+        emailTo: user.email,
+        token: passwordReset.token,
+      },
+    })
+  } catch (e) {
+    throw errorResolver(e, {
+      ERROR_USER_NOT_FOUND,
+      ZOD: ERROR_USER_INVALID_DATA,
+      EMAIL_BAD_CREDENTIALS: ERROR_EMAIL_CREDENTIALS,
+    })
+  }
 })

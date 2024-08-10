@@ -12,6 +12,14 @@ export const users = sqliteTable('users', {
   createdAt: dateField('created_at', true),
 })
 
+export const passwordResets = sqliteTable('password_resets', {
+  id: idField('id'),
+  userId: foreignIdField('user_id').references(() => users.id, { onDelete: 'cascade', onUpdate: 'cascade' }),
+  token: text('token').notNull(),
+  expiresAt: dateField('expires_at').notNull(),
+  createdAt: dateField('created_at', true),
+})
+
 export const projects = sqliteTable('projects', {
   id: idField('id'),
   name: text('name').notNull(),

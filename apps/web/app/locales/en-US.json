@@ -61,6 +61,8 @@
       "400004": "Passwords do not match",
       "400005": "Invalid account general data",
       "400006": "Invalid account delete data",
+      "400007": "Token expired",
+      "400008": "Invalid token",
       "401000": "Unauthorized",
       "403000": "Forbidden",
       "403001": "Access only for unauthorized users",
@@ -166,6 +168,10 @@
       "title": "Forgot Password",
       "description": "Enter your email and we’ll send you a code you can use to update your password."
     },
+    "reset": {
+      "title": "Reset Password",
+      "description": "Enter the token you received via email and the new password."
+    },
     "form": {
       "name": {
         "label": "Name",
@@ -179,10 +185,15 @@
         "label": "Password",
         "placeholder": "Enter your password"
       },
+      "token": {
+        "label": "Token Code",
+        "placeholder": "Enter your token code"
+      },
       "action": {
         "login": "Log In",
         "register": "Sign Up",
-        "forgot": "Send Code"
+        "forgot": "Send Code",
+        "reset": "Reset Password"
       }
     },
     "errors": {

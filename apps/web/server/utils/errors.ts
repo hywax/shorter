@@ -15,6 +15,8 @@ interface CustomError {
   }
 }
 
+const logger = useLogger('error')
+
 /**
  * Parse error string into custom error object.
  */
@@ -84,6 +86,8 @@ function getAdditionErrorData(exception: unknown): Record<string, unknown> {
  * Error resolver function. It is used to convert an exception into a custom error object.
  */
 export function errorResolver(exception: unknown, codes?: ErrorMapCodes | string) {
+  logger.error(exception)
+
   if (!codes) {
     codes = {
       ALL: ERROR_INTERNAL_ERROR,

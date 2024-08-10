@@ -22,6 +22,16 @@
         {{ $t('auth.form.action.forgot') }}
       </UButton>
     </UForm>
+
+    <div class="mt-4 text-sm text-gray-600 dark:text-gray-500 text-center">
+      <I18nT keypath="auth.links.login" scope="global">
+        <template #link>
+          <ULink to="/auth/login" class="text-primary hover:underline">
+            {{ $t('auth.login.title') }}
+          </ULink>
+        </template>
+      </I18nT>
+    </div>
   </div>
 </template>
 
@@ -31,7 +41,7 @@ import { type AuthForgotSchema, authForgotSchema } from '#schema'
 
 const form = ref<Form<AuthForgotSchema>>()
 const state = reactive<AuthForgotSchema>({
-  email: 'test@ta.ru',
+  email: '',
 })
 
 const { status, execute: onSubmit } = useAPI('/api/auth/forgot', {
@@ -39,6 +49,11 @@ const { status, execute: onSubmit } = useAPI('/api/auth/forgot', {
   body: state,
   immediate: false,
   watch: false,
+  onResponse: async ({ response }) => {
+    if (response.ok) {
+      await navigateTo('/auth/reset')
+    }
+  },
 })
 
 const { onChangeLocale } = useI18nUtils()

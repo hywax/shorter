@@ -6,9 +6,13 @@ import * as schema from './tables'
 
 export const userDraftSchema = createInsertSchema(schema.users)
 export const userSchema = createSelectSchema(schema.users)
+export const passwordResetDraftSchema = createInsertSchema(schema.passwordResets)
+export const passwordResetSchema = createSelectSchema(schema.passwordResets)
 
 export type UserDraft = z.infer<typeof userDraftSchema>
 export type User = z.infer<typeof userSchema>
+export type PasswordResetDraft = z.infer<typeof passwordResetDraftSchema>
+export type PasswordReset = z.infer<typeof passwordResetSchema>
 
 // Projects
 

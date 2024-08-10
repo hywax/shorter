@@ -8,6 +8,7 @@ export interface ChangePasswordTemplate {
   params: TemplateParams & {
     resetUrl: string
     emailTo: string
+    token: string
   }
 }
 
