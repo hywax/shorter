@@ -1,6 +1,6 @@
 import { readdirSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
-import handlebars from '@shorter/rollup-plugin-handlebars'
+import handlebars from 'rollup-plugin-handlebarsjs'
 
 export default defineNuxtConfig({
   devtools: {
