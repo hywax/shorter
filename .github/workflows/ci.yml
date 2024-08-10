@@ -37,7 +37,7 @@ jobs:
         run: pnpm run typecheck
 
       - name: Check i18n errors
-        run: pnpm run script:compare-i18n-errors
+        run: pnpm --filter @shorter/web script:compare-i18n-errors
 
       - name: Build
         run: pnpm run build
