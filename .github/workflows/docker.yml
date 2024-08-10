@@ -5,6 +5,9 @@ on:
     types:
       - created
   push:
+    paths-ignore:
+      - "apps/docs/**"
+      - ".md"
     branches:
       - main
 

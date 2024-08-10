@@ -3,11 +3,13 @@ name: CI
 on:
   push:
     paths-ignore:
+      - "apps/docs/**"
       - ".md"
     branches:
       - main
   pull_request:
     paths-ignore:
+      - "apps/docs/**"
       - "*.md"
     branches:
       - main
