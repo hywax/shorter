@@ -9,7 +9,7 @@
 
 Shorter is a service for shortening URLs. It allows you to create custom short links, track their analytics, and generate QR codes.
 
-Check out the full documentation on [the website](#) (will be coming soon).
+Check out the full documentation on [the website](https://shorter.hywax.space/).
 
 ## Features
 
@@ -42,7 +42,7 @@ Here are some ways you can contribute:
 
 ## Repository activity
 
-![Shorter activity](https://repobeats.axiom.co/api/embed/2e44c212ba5f9e363d3b7ef3886fc5ba5d4ef011.svg "Repobeats analytics image")
+![Shorter activity](https://repobeats.axiom.co/api/embed/2e44c212ba5f9e363d3b7ef3886fc5ba5d4ef011.svg)
 
 ## License
 
