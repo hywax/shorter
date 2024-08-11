@@ -9,10 +9,13 @@ export default defineConfig({
      * Main navigation
      */
     nav: [
+      { text: 'Introduction', link: '/guide/what-is' },
+      { text: 'Roadmap', link: '/extra/roadmap' },
       {
         text: getVersion(),
         items: [
           { text: 'Changelog', link: '/other/changelog' },
+          { text: 'Contributing', link: '/other/contributing' },
         ],
       },
     ],
@@ -22,10 +25,27 @@ export default defineConfig({
      */
     sidebar: [
       {
+        text: 'Introduction',
+        base: '/guide',
+        items: [
+          { text: 'What is Shorter?', link: '/what-is' },
+          { text: 'Installation', link: '/installation' },
+          { text: 'Configuration', link: '/configuration' },
+        ],
+      },
+      {
+        text: 'Essentials',
+        base: '/essentials',
+        items: [
+          { text: 'Getting Started', link: '/started' },
+        ],
+      },
+      {
         text: 'Other',
         base: '/other',
         collapsed: true,
         items: [
+          { text: 'Contributing', link: '/contributing' },
           { text: 'Changelog', link: '/changelog' },
           { text: 'License', link: '/license' },
         ],

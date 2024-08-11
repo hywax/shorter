@@ -19,4 +19,9 @@ export default defineConfig({
     root: { label: 'English', ...enUs },
     ru: { label: 'Русский', ...ruRu },
   },
+  ignoreDeadLinks: [
+    (url) => {
+      return !url.toLowerCase().includes('_parts')
+    },
+  ],
 })

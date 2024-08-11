@@ -9,10 +9,13 @@ export default defineConfig({
      * Меню в шапке
      */
     nav: [
+      { text: 'Руководство', link: '/ru/guide/what-is' },
+      { text: 'Дорожная карта', link: '/ru/extra/roadmap' },
       {
         text: getVersion(),
         items: [
           { text: 'Журнал изменений', link: '/ru/other/changelog' },
+          { text: 'Внести вклад', link: '/ru/other/contributing' },
         ],
       },
     ],
@@ -22,10 +25,27 @@ export default defineConfig({
      */
     sidebar: [
       {
+        text: 'Руководство',
+        base: '/ru/guide',
+        items: [
+          { text: 'Что такое Shorter?', link: '/what-is' },
+          { text: 'Установка', link: '/installation' },
+          { text: 'Конфигурация', link: '/configuration' },
+        ],
+      },
+      {
+        text: 'Основы',
+        base: '/ru/essentials',
+        items: [
+          { text: 'Начало работы', link: '/started' },
+        ],
+      },
+      {
         text: 'Прочее',
         base: '/ru/other',
         collapsed: true,
         items: [
+          { text: 'Внести вклад', link: '/contributing' },
           { text: 'Журнал изменений', link: '/changelog' },
           { text: 'Лицензия', link: '/license' },
         ],
@@ -53,7 +73,7 @@ export default defineConfig({
       },
     },
     outline: {
-      label: 'На странице',
+      label: 'Оглавление',
     },
     docFooter: {
       prev: 'Предыдущая страница',
