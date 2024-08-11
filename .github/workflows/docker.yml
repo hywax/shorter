@@ -39,7 +39,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build ${{ matrix.package }}
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: .
           build-args: VERSION=nightly
@@ -51,7 +51,7 @@ jobs:
           cache-to: type=registry,mode=max,ref=${{ env.CONTAINER_NAMESPACE }}-build-cache:${{ matrix.package }}
 
       - name: Build ${{ matrix.package }} (release)
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         if: github.event_name == 'release'
         with:
           context: .
