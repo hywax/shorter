@@ -1,7 +1,7 @@
 <a href="https://github.com/hywax/shorter">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/hywax/shorter/main/.github/static/cover-light.png">
-    <img alt="Shorter" src="https://raw.githubusercontent.com/hywax/shorter/main/.github/static/cover-dark.png">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/hywax/shorter/main/.github/static/cover-dark.png">
+    <img alt="Shorter" src="https://raw.githubusercontent.com/hywax/shorter/main/.github/static/cover-light.png">
   </picture>
 </a>
 
