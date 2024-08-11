@@ -30,7 +30,7 @@
 </template>
 
 <script setup lang="ts">
-const modalIsOpen = defineModel()
+const modalIsOpen = defineModel<boolean>()
 const sections = computed(() => [
   {
     title: $t('app.shortcuts.general.title'),
