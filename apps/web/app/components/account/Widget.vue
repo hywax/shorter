@@ -22,7 +22,7 @@ const { clear: singOut, user } = useUserSession()
 
 const items = computed(() => [
   [{
-    label: user.value?.email,
+    label: user.value!.email,
     slot: 'account',
     disabled: true,
   }], [{

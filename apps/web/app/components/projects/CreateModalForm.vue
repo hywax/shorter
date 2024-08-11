@@ -13,7 +13,7 @@ const props = defineProps<{
 }>()
 
 const emit = defineEmits(['update:modelValue'])
-const modalIsOpen = defineModel()
+const modalIsOpen = defineModel<boolean>()
 
 function openModal() {
   emit('update:modelValue', true)
