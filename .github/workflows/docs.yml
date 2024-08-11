@@ -1,0 +1,67 @@
+name: Deploy Documentation
+
+on:
+  push:
+    paths:
+      - "apps/docs/**"
+      - ".github/workflows/docs.yml"
+      - "package.json"
+      - "CHANGELOG.md"
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 9.7.0
+          run_install: true
+
+      - name: Build with VitePress
+        run: |
+          pnpm --filter @shorter/docs build
+          touch apps/docs/.vitepress/dist/.nojekyll
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          name: github-pages
+          path: apps/docs/.vitepress/dist
+
+  deploy:
+    name: Deploy
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
