@@ -53,6 +53,14 @@ export default defineConfig({
     ],
 
     /**
+     * Footer
+     */
+    footer: {
+      message: 'Released under the AGPL-3.0 License',
+      copyright: '© 2024-present Hywax',
+    },
+
+    /**
      * Other options
      */
     editLink: {

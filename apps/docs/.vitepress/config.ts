@@ -8,6 +8,7 @@ export default defineConfig({
   rewrites: {
     'en/:rest*': ':rest*',
   },
+  lastUpdated: true,
   themeConfig: {
     search: {
       provider: 'local',

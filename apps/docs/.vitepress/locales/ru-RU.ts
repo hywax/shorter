@@ -53,6 +53,14 @@ export default defineConfig({
     ],
 
     /**
+     * Подвал
+     */
+    footer: {
+      message: 'Выпущено под лицензией AGPL-3.0',
+      copyright: '© 2024-настоящее время Hywax',
+    },
+
+    /**
      * Другие параметры
      */
     langMenuLabel: 'Язык',

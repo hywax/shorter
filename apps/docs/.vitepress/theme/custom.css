@@ -31,3 +31,7 @@
 .vp-doc h2, .vp-doc h3, .vp-doc h4, .vp-doc h5, .vp-doc h6 {
   font-weight: 700;
 }
+
+.VPSidebar.open {
+  --vp-sidebar-bg-color: var(--vp-c-bg-alt);
+}
