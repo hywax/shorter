@@ -17,6 +17,7 @@
   "devDependencies": {
     "@hywax/vitepress-yandex-metrika": "^0.4.0",
     "@iconify-json/carbon": "^1.1.37",
+    "@iconify-json/ph": "^1.1.14",
     "@iconify/json": "^2.2.236",
     "@shorter/eslint-config": "workspace:*",
     "@types/node": "^22.2.0",
