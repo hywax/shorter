@@ -10,5 +10,6 @@ declare module 'vue' {
     BoostyLink: typeof import('./theme/components/BoostyLink.vue')['default']
     GithubLink: typeof import('./theme/components/GithubLink.vue')['default']
     RoadmapItem: typeof import('./theme/components/RoadmapItem.vue')['default']
+    Sponsor: typeof import('./theme/components/Sponsor.vue')['default']
   }
 }

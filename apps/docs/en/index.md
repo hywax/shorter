@@ -14,7 +14,7 @@ hero:
       link: /guide/installation
     - theme: alt
       text: GitHub
-      link: https://github.com/hywax/shorter?ref=shorter-docs
+      link: https://github.com/hywax/shorter
 features:
   - icon: <span class="i-ph:chart-bar-fill" style="color:var(--vp-c-purple-2)"></span>
     title: Analytics

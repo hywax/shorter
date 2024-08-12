@@ -1,5 +1,5 @@
 <template>
-  <a href="https://github.com/hywax/shorter?ref=shorter-docs" target="_blank" rel="noreferrer">
+  <a href="https://github.com/hywax/shorter" target="_blank" rel="noreferrer">
     <span class="i-simple-icons-github" />
     <span>
       {{ label }}
