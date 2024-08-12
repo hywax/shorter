@@ -1,6 +1,6 @@
 <template>
   <a href="https://github.com/hywax/shorter?ref=shorter-docs" target="_blank" rel="noreferrer">
-    <IconGithub />
+    <span class="i-simple-icons-github" />
     <span>
       {{ label }}
     </span>

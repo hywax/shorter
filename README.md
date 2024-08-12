@@ -29,7 +29,7 @@ Check out the full documentation on [the website](https://shorter.hywax.space/).
 
 ## Contributing
 
-A huge thank you to everyone who is helping to improve Shorter. Thanks to you, the project can evolve! See the [roadmap](./ROADMAP.md) file for an idea of how the project should evolve.
+A huge thank you to everyone who is helping to improve Shorter. Thanks to you, the project can evolve! See the [roadmap](https://shorter.hywax.space/extra/roadmap.html) file for an idea of how the project should evolve.
 
 Here are some ways you can contribute:
 

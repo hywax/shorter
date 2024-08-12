@@ -1,4 +1,6 @@
 import { defineConfig } from 'vitepress'
+import viteConfig from '../vite.config'
+
 import enUs from './locales/en-US'
 import ruRu from './locales/ru-RU'
 
@@ -24,4 +26,5 @@ export default defineConfig({
       return !url.toLowerCase().includes('_parts')
     },
   ],
+  vite: viteConfig,
 })

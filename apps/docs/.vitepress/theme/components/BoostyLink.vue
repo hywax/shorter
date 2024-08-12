@@ -1,6 +1,6 @@
 <template>
   <a href="https://boosty.to/hywax/donate?ref=shorter-docs" target="_blank" rel="noreferrer">
-    <IconBoosty />
+    <span class="i-simple-icons-boosty" />
     <span>
       {{ label }}
     </span>

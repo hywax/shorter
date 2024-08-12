@@ -17,6 +17,13 @@
   --vp-c-divider: var(--sh-gutter);
 }
 
+.color-brand {
+  color: var(--vp-c-brand-1);
+}
+
+/**
+ * Custom styles for the VitePress theme
+ */
 .vp-doc h1 {
   font-weight: 800;
 }
