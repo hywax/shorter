@@ -32,6 +32,6 @@ At the second stage of development, additional functions and capabilities of the
 
 At the third stage of development, additional functions and capabilities of the application are added.
 
-<roadmap-item title="Links" description="UTM tags, social cards, AI link generation" />
-<roadmap-item title="API" description="ability to use API for integration with other services" />
-<roadmap-item title="Browser extension" description="convenient creation of short links directly from the browser" />
+<roadmap-item title="Links" description="UTM tags, social cards, AI link generation" status="planned" />
+<roadmap-item title="API" description="ability to use API for integration with other services" status="planned" />
+<roadmap-item title="Browser extension" description="convenient creation of short links directly from the browser" status="planned" />

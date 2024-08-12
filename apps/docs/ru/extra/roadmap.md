@@ -32,6 +32,6 @@
 
 На третьем этапе разработки добавляются дополнительные функции и возможности приложения.
 
-<roadmap-item title="Ссылки" description="UTM-метки, социальные карточки, генерация AI-ссылок" />
-<roadmap-item title="API" description="возможность использования API для интеграции с другими сервисами" />
-<roadmap-item title="Расширение браузера" description="удобное создание коротких ссылок прямо из браузера" />
+<roadmap-item title="Ссылки" description="UTM-метки, социальные карточки, генерация AI-ссылок" status="planned" />
+<roadmap-item title="API" description="возможность использования API для интеграции с другими сервисами" status="planned" />
+<roadmap-item title="Расширение браузера" description="удобное создание коротких ссылок прямо из браузера" status="planned" />
