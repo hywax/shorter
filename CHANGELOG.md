@@ -1,6 +1,51 @@
 # Changelog
 
 
+## v0.3.0
+
+[compare changes](https://github.com/hywax/shorter/compare/v0.2.0...v0.3.0)
+
+### 🚀 Enhancements
+
+- ⚠️  Create docs app ([cfd95fc](https://github.com/hywax/shorter/commit/cfd95fc))
+
+### 📖 Documentation
+
+- Vitepress settings ([6fd9839](https://github.com/hywax/shorter/commit/6fd9839))
+- Initial docs struct ([28e526c](https://github.com/hywax/shorter/commit/28e526c))
+- Add funding link ([02c0231](https://github.com/hywax/shorter/commit/02c0231))
+- Update readme project ([b2ceeb3](https://github.com/hywax/shorter/commit/b2ceeb3))
+- Add cover support dark theme ([31523da](https://github.com/hywax/shorter/commit/31523da))
+- Rewrite cover images ([31f0a3d](https://github.com/hywax/shorter/commit/31f0a3d))
+- Docs domain ([5f18f8a](https://github.com/hywax/shorter/commit/5f18f8a))
+- Roadmap page ([0f4596f](https://github.com/hywax/shorter/commit/0f4596f))
+- Change roadmap version ([0f74bd9](https://github.com/hywax/shorter/commit/0f74bd9))
+- Optimize uncss icon loading ([6002c60](https://github.com/hywax/shorter/commit/6002c60))
+- Vitepress settings docs ([6cd9812](https://github.com/hywax/shorter/commit/6cd9812))
+- Home page ([8198c22](https://github.com/hywax/shorter/commit/8198c22))
+- What is Shorter ([ac3a5c4](https://github.com/hywax/shorter/commit/ac3a5c4))
+- Sponsor widget ([03ff422](https://github.com/hywax/shorter/commit/03ff422))
+- Ph icons set add dependencies ([f3d6c87](https://github.com/hywax/shorter/commit/f3d6c87))
+
+### 🏡 Chore
+
+- Update project cover ([a6a476d](https://github.com/hywax/shorter/commit/a6a476d))
+- Remove example .env file ([098defc](https://github.com/hywax/shorter/commit/098defc))
+
+### 🤖 CI
+
+- Add ignore docs app ([344a42f](https://github.com/hywax/shorter/commit/344a42f))
+- Deploy docs plan ([af49e91](https://github.com/hywax/shorter/commit/af49e91))
+- Remove contributors plan ([f90741d](https://github.com/hywax/shorter/commit/f90741d))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️  Create docs app ([cfd95fc](https://github.com/hywax/shorter/commit/cfd95fc))
+
+### ❤️ Contributors
+
+- Hywax ([@hywax](http://github.com/hywax))
+
 ## v0.2.0
 
 [compare changes](https://github.com/hywax/shorter/compare/v0.1.0...v0.2.0)
