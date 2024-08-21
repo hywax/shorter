@@ -41,6 +41,13 @@ export default defineConfig({
         ],
       },
       {
+        text: 'Расширенное',
+        base: '/ru/advanced',
+        items: [
+          { text: 'Ночной канал', link: '/nightly-release' },
+        ],
+      },
+      {
         text: 'Прочее',
         base: '/ru/other',
         collapsed: true,
