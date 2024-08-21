@@ -41,6 +41,13 @@ export default defineConfig({
         ],
       },
       {
+        text: 'Advanced',
+        base: '/advanced',
+        items: [
+          { text: 'Nightly release', link: '/nightly-release' },
+        ],
+      },
+      {
         text: 'Other',
         base: '/other',
         collapsed: true,

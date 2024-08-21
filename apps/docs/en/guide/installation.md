@@ -33,3 +33,8 @@ All possible paths into the container.
 |----------------------------------|------|----------------------------|
 | `/app/data/db.sqlite3`           | file | Database SQLite            |
 | `/app/public/email/logotype.png` | file | Logotype 150x150 for email |
+
+## Nightly release
+
+The nightly release channel allows you to use Shorter built directly from the latest commits in the repository.
+More details can be found [here](../advanced/nightly-release.md)
