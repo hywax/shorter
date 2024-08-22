@@ -89,6 +89,7 @@ export default defineConfig({
     },
     outline: {
       label: 'Оглавление',
+      level: [2,3],
     },
     docFooter: {
       prev: 'Предыдущая страница',

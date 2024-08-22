@@ -81,5 +81,8 @@ export default defineConfig({
         timeStyle: 'medium',
       },
     },
+    outline: {
+      level: [2,3],
+    },
   },
 })
