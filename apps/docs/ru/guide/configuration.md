@@ -1,14 +1,19 @@
 # Конфигурация
 
-## Base url
+## Базовый url
+
+Это базовый публичный URL-адрес, на котором будет запущено приложение.
 
 <configuration-item
   type="string"
   env="APP_BASE_URL"
+  example="http://localhost:3000"
   required
 />
 
-## Session password
+## Пароль сессии
+
+Пароль для защиты сессии, длинной 32 символа, необходим для шифрования текущей сессии пользователей.
 
 <configuration-item
   type="string"
@@ -16,7 +21,10 @@
   required
 />
 
-## Allow registration
+## Разрешить регистрацию
+
+При значении `true` любой пользователь сможет зарегистрироваться. При значении `false` самостоятельная регистрация 
+пользователя отключается, при этом создать пользователей может только администратор.
 
 <configuration-item
   type="boolean"
@@ -24,7 +32,9 @@
   env="APP_AUTH_ALLOW_REGISTRATION"
 />
 
-## Account allow delete
+## Разрешить удаление учетной записи
+
+При значении `true` любой пользователь может удалить свой профиль. При этом удаляется абсолютно все, что с ним связано.
 
 <configuration-item
   type="boolean"
@@ -34,7 +44,7 @@
 
 ## Email
 
-### Host
+### Хост
 
 <configuration-item
   type="string"
@@ -42,7 +52,7 @@
   env="APP_EMAIL_HOST"
 />
 
-### Port
+### Порт
 
 <configuration-item
   type="integer"
@@ -50,7 +60,7 @@
   env="APP_EMAIL_PORT"
 />
 
-### From
+### От кого
 
 <configuration-item
   type="string"
@@ -58,7 +68,7 @@
   env="APP_EMAIL_FROM"
 />
 
-### Auth user
+### Логин
 
 <configuration-item
   type="string"
@@ -66,14 +76,14 @@
   env="APP_EMAIL_AUTH_USER"
 />
 
-### Auth password
+### Пароль
 
 <configuration-item
   type="string"
   env="APP_EMAIL_AUTH_PASSWORD"
 />
 
-## Disable sponsor link
+## Отключить спонсорскую ссылку
 
 <configuration-item
   type="boolean"
@@ -81,7 +91,7 @@
   env="APP_PUBLIC_DISABLE_SPONSOR_LINK"
 />
 
-## Disable source link
+## Отключить ссылку на источник
 
 <configuration-item
   type="boolean"
