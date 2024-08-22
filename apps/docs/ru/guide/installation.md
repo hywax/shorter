@@ -5,13 +5,13 @@
 В качестве поставки Shorter использует Docker контейнеры. Так как код хранится на Github, то и сами контейнеры тоже.
 Вы можете использовать абсолютно любой метод запуска этих контейнеров.
 
-### Docker run:
+### Docker run
 
 ```shell
 docker run -p 3000:3000 -v ./data/:/app/data ghcr.io/hywax/shorter-web
 ```
 
-### Docker compose:
+### Docker compose
 ```yaml
 version: '3.8'
 
@@ -21,6 +21,9 @@ services:
     restart: unless-stopped
     ports:
       - '3000:3000'
+    environment:
+      - APP_BASE_URL=http://localhost:3000
+      - APP_SESSION_PASSWORD=password-with-at-least-32-characters
     volumes:
       - ./data:/app/data
 ```
