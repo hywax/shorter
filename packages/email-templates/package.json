@@ -29,10 +29,10 @@
     "vue": "^3.4.38"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.26.0",
+    "@antfu/eslint-config": "^2.27.0",
     "@rollup/plugin-typescript": "^11.1.6",
     "@shorter/eslint-config": "workspace:*",
-    "@types/node": "^22.4.1",
+    "@types/node": "^22.5.0",
     "@vitejs/plugin-vue": "^5.1.2",
     "@vue/compiler-sfc": "^3.4.38",
     "eslint": "^9.9.0",

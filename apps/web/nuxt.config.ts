@@ -70,8 +70,8 @@ export default defineNuxtConfig({
       alwaysRedirect: true,
     },
     locales: [
-      { code: 'en', iso: 'en-US', name: 'English', file: 'en-US.json' },
-      { code: 'ru', iso: 'ru-RU', name: 'Русский', file: 'ru-RU.json' },
+      { code: 'en', language: 'en-US', name: 'English', file: 'en-US.json' },
+      { code: 'ru', language: 'ru-RU', name: 'Русский', file: 'ru-RU.json' },
     ],
   },
   zodI18n: {
@@ -91,7 +91,7 @@ export default defineNuxtConfig({
       plugins: [handlebars()],
     },
   },
-  compatibilityDate: '2024-08-04',
+  compatibilityDate: '2024-08-23',
   future: {
     compatibilityVersion: 4,
   },
