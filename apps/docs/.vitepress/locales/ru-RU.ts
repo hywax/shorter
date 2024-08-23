@@ -44,6 +44,7 @@ export default defineConfig({
         text: 'Расширенное',
         base: '/ru/advanced',
         items: [
+          { text: 'Email', link: '/email' },
           { text: 'Ночной канал', link: '/nightly-release' },
         ],
       },

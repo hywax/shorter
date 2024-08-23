@@ -44,6 +44,7 @@ export default defineConfig({
         text: 'Advanced',
         base: '/advanced',
         items: [
+          { text: 'Email', link: '/email' },
           { text: 'Nightly release', link: '/nightly-release' },
         ],
       },

@@ -44,7 +44,15 @@ If `true` is set, any user can delete their profile. Absolutely everything assoc
 
 ## Email
 
+Setting up e-mail. It is necessary for sending emails about password recovery, notifications about invitations to the project.
+
+::: tip
+You can read more at [advanced email](../advanced/email.md)
+:::
+
 ### Host
+
+Outgoing mail server.
 
 <configuration-item
   type="string"
@@ -54,6 +62,8 @@ If `true` is set, any user can delete their profile. Absolutely everything assoc
 
 ### Port
 
+Outgoing server port.
+
 <configuration-item
   type="integer"
   example="587"
@@ -61,6 +71,8 @@ If `true` is set, any user can delete their profile. Absolutely everything assoc
 />
 
 ### From
+
+Return Mail Address. Mail will be sent from this name. It is almost always the same as the login.
 
 <configuration-item
   type="string"
@@ -70,6 +82,8 @@ If `true` is set, any user can delete their profile. Absolutely everything assoc
 
 ### Auth user
 
+Login from the account from which the message will be sent. Some providers require a domain name, as shown in the example.
+
 <configuration-item
   type="string"
   example="no-reply@example.com"
@@ -77,6 +91,8 @@ If `true` is set, any user can delete their profile. Absolutely everything assoc
 />
 
 ### Auth password
+
+Password from the account from which the message will be sent.
 
 <configuration-item
   type="string"
