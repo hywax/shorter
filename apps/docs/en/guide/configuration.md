@@ -85,6 +85,15 @@ If `true` is set, any user can delete their profile. Absolutely everything assoc
 
 ## Disable sponsor link
 
+This option disables the sponsored link at the bottom of the app.
+
+::: tip Пояснение
+We give you the option to disable the sponsored link so other users don't see it.
+In turn, please make any donation to support the project.
+
+<boosty-link label="Sponsoring on Boosty" />
+:::
+
 <configuration-item
   type="boolean"
   defaults="false"
@@ -92,6 +101,15 @@ If `true` is set, any user can delete their profile. Absolutely everything assoc
 />
 
 ## Disable source link
+
+This option disables the link to the GitHub repository at the bottom of the application.
+
+::: tip
+We provide the option to disable the source link so that other users do not see it.
+In turn, please make any donation to support the project.
+
+<boosty-link label="Sponsoring on Boosty" />
+:::
 
 <configuration-item
   type="boolean"
