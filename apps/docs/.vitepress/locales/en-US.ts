@@ -44,6 +44,7 @@ export default defineConfig({
         text: 'Advanced',
         base: '/advanced',
         items: [
+          { text: 'Email', link: '/email' },
           { text: 'Nightly release', link: '/nightly-release' },
         ],
       },
@@ -80,6 +81,9 @@ export default defineConfig({
         dateStyle: 'short',
         timeStyle: 'medium',
       },
+    },
+    outline: {
+      level: [2, 3],
     },
   },
 })
