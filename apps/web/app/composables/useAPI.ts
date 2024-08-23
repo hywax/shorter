@@ -6,6 +6,7 @@ import type { AsyncData, FetchResult, UseFetchOptions } from 'nuxt/app'
 type PickFrom<T, K extends Array<string>> = T extends Array<any> ? T : T extends Record<string, any> ? keyof T extends K[number] ? T : K[number] extends never ? T : Pick<T, K[number]> : T
 type KeysOf<T> = Array<T extends T ? (keyof T extends string ? keyof T : never) : never>
 
+// @ts-expect-error currently there is a problem with the custom $fetch, todo remove ts-expect-error
 export function useAPI<
   ResT = void,
   ErrorT = FetchError,
