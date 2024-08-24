@@ -51,7 +51,7 @@
       </UButton>
     </UForm>
 
-    <div class="mt-4 text-sm text-gray-600 dark:text-gray-500 text-center">
+    <div v-if="$settings?.features.emailAllowSend" class="mt-4 text-sm text-gray-600 dark:text-gray-500 text-center">
       <I18nT keypath="auth.links.login" scope="global">
         <template #link>
           <ULink to="/auth/login" class="text-primary hover:underline">
@@ -66,6 +66,8 @@
 <script setup lang="ts">
 import type { Form } from '#ui/types'
 import { type AuthRegisterSchema, authRegisterSchema } from '#schema'
+
+const { $settings } = useNuxtApp()
 
 const form = ref<Form<AuthRegisterSchema>>()
 const state = reactive<AuthRegisterSchema>({

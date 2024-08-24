@@ -3,9 +3,7 @@ import { createUser } from '#core/services/user'
 import { getProjectsAvailableList } from '#core/services/project'
 
 export default defineEventHandler(async (event) => {
-  const config = useRuntimeConfig(event)
-
-  if (['false', '0'].includes(config.authAllowRegistration)) {
+  if (!featureIsAvailable('authAllowRegistration', event)) {
     throw errorResolver({}, ERROR_REGISTRATION_DISABLED)
   }
 

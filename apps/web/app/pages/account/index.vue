@@ -1,7 +1,7 @@
 <template>
   <div class="grid gap-5">
     <AccountGeneralForm />
-    <AccountDeleteForm />
+    <AccountDeleteForm v-if="$settings?.features.accountAllowDelete" />
   </div>
 </template>
 
@@ -13,4 +13,6 @@ definePageMeta({
 useHead({
   title: () => $t('account.general.title'),
 })
+
+const { $settings } = useNuxtApp()
 </script>
