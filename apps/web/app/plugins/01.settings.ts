@@ -1,9 +1,9 @@
 export default defineNuxtPlugin(async () => {
-  const settings = await useFetch('/api/app/settings')
+  const settings = await $fetch('/api/app/settings')
 
   return {
     provide: {
-      settings: settings.data.value,
+      settings,
     },
   }
 })
