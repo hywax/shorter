@@ -21,7 +21,7 @@
     "lint:fix": "eslint --fix ."
   },
   "peerDependencies": {
-    "eslint": "^9.9.0"
+    "eslint": "^9.9.1"
   },
   "dependencies": {
     "@vue-email/components": "^0.0.19",
@@ -34,7 +34,7 @@
     "@types/node": "^22.5.0",
     "@vitejs/plugin-vue": "^5.1.2",
     "@vue/compiler-sfc": "^3.4.38",
-    "eslint": "^9.9.0",
+    "eslint": "^9.9.1",
     "vite": "^5.4.2"
   }
 }
