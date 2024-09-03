@@ -18,7 +18,7 @@ const logger = useLogger('email')
 export function useEmail(event?: H3Event) {
   const config = useRuntimeConfig(event)
 
-  if (!config.emailHost || !config.emailPort || !config.emailAuthUser || !config.emailAuthPassword) {
+  if (!featureIsAvailable('emailAllowSend', event)) {
     throw new EmailError('Email configuration is missing', 'EMAIL_BAD_CREDENTIALS')
   }
 

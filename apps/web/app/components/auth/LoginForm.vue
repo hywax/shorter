@@ -23,7 +23,7 @@
       </UFormGroup>
 
       <div class="flex justify-end">
-        <ULink to="/auth/forgot" class="text-sm text-gray-700 dark:text-gray-200 hover:underline">
+        <ULink v-if="$settings?.features.emailAllowSend" to="/auth/forgot" class="text-sm text-gray-700 dark:text-gray-200 hover:underline">
           {{ $t('auth.links.forgot') }}
         </ULink>
       </div>
@@ -33,7 +33,7 @@
       </UButton>
     </UForm>
 
-    <div class="mt-4 text-sm text-gray-600 dark:text-gray-500 text-center">
+    <div v-if="$settings?.features.authAllowRegistration" class="mt-4 text-sm text-gray-600 dark:text-gray-500 text-center">
       <I18nT keypath="auth.links.register" scope="global">
         <template #link>
           <ULink to="/auth/register" class="text-primary hover:underline">
@@ -48,6 +48,8 @@
 <script setup lang="ts">
 import type { Form } from '#ui/types'
 import { type AuthLoginSchema, authLoginSchema } from '#schema'
+
+const { $settings } = useNuxtApp()
 
 const form = ref<Form<AuthLoginSchema>>()
 // todo: remove credentials from state
