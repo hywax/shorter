@@ -1,0 +1,14 @@
+diff --git a/dist/runtime/app/plugins/session.client.d.ts b/dist/runtime/app/plugins/session.client.d.ts
+index e69de29bb2d1d6434b8b29ae775ad8c2e48c5391..5298df7f0f673c97fe02c77b016ac9998ade2291 100644
+--- a/dist/runtime/app/plugins/session.client.d.ts
++++ b/dist/runtime/app/plugins/session.client.d.ts
+@@ -0,0 +1,2 @@
++declare const _default: any;
++export default _default;
+diff --git a/dist/runtime/app/plugins/session.server.d.ts b/dist/runtime/app/plugins/session.server.d.ts
+index e69de29bb2d1d6434b8b29ae775ad8c2e48c5391..5298df7f0f673c97fe02c77b016ac9998ade2291 100644
+--- a/dist/runtime/app/plugins/session.server.d.ts
++++ b/dist/runtime/app/plugins/session.server.d.ts
+@@ -0,0 +1,2 @@
++declare const _default: any;
++export default _default;

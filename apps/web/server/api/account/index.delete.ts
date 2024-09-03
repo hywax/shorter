@@ -2,9 +2,7 @@ import { ERROR_ACCOUNT_DELETE_INVALID_DATA, ERROR_DELETE_ACCOUNT_DISABLED } from
 import { accountDelete } from '#core/services/account'
 
 export default defineEventHandler(async (event) => {
-  const config = useRuntimeConfig(event)
-
-  if (!['true', '1'].includes(config.accountAllowDelete)) {
+  if (!featureIsAvailable('accountAllowDelete', event)) {
     throw errorResolver({}, ERROR_DELETE_ACCOUNT_DISABLED)
   }
 
