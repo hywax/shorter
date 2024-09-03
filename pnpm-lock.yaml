@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  nuxt-auth-utils@0.3.5:
+    hash: 4z57wm6q7mzei5delssisx6rsi
+    path: patches/nuxt-auth-utils@0.3.5.patch
+
 importers:
 
   .:
@@ -113,7 +118,7 @@ importers:
         version: 6.9.14
       nuxt-auth-utils:
         specifier: ^0.3.5
-        version: 0.3.5(magicast@0.3.4)(rollup@4.20.0)
+        version: 0.3.5(patch_hash=4z57wm6q7mzei5delssisx6rsi)(magicast@0.3.4)(rollup@4.20.0)
       nuxt-zod-i18n:
         specifier: ^1.9.0
         version: 1.9.0(magicast@0.3.4)(rollup@4.20.0)
@@ -12114,7 +12119,7 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
-  nuxt-auth-utils@0.3.5(magicast@0.3.4)(rollup@4.20.0):
+  nuxt-auth-utils@0.3.5(patch_hash=4z57wm6q7mzei5delssisx6rsi)(magicast@0.3.4)(rollup@4.20.0):
     dependencies:
       '@nuxt/kit': 3.13.0(magicast@0.3.4)(rollup@4.20.0)
       defu: 6.1.4
