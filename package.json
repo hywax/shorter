@@ -2,7 +2,7 @@
   "name": "shorter",
   "version": "0.3.0",
   "private": true,
-  "packageManager": "pnpm@9.8.0",
+  "packageManager": "pnpm@9.9.0",
   "scripts": {
     "release": "pnpm lint && pnpm typecheck && pnpm build && changelogen --release --push",
     "build": "turbo build",
@@ -16,13 +16,13 @@
     "prepare": "husky"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.4.0",
-    "@commitlint/config-conventional": "^19.2.2",
+    "@commitlint/cli": "^19.4.1",
+    "@commitlint/config-conventional": "^19.4.1",
     "changelogen": "^0.5.5",
     "dotenv-cli": "^7.4.2",
     "husky": "^9.1.5",
-    "lint-staged": "^15.2.9",
-    "turbo": "^2.0.14"
+    "lint-staged": "^15.2.10",
+    "turbo": "^2.1.1"
   },
   "lint-staged": {
     "*.ts": "pnpm run lint"
