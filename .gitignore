@@ -13,6 +13,7 @@ turbo-*.log
 .idea
 .vscode
 .turbo
+.DS_Store
 
 tsconfig.tsbuildinfo
 
