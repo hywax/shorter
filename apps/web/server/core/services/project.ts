@@ -111,7 +111,7 @@ export async function getProjectsList(filters?: ProjectsListFilters): Promise<Pr
 /**
  * Create a new project
  *
- * @param data Project data
+ * @param data ProjectDraft data
  * @returns Project
  */
 export async function createProject(data: ProjectDraft): Promise<Project> {
@@ -126,20 +126,20 @@ export async function createProject(data: ProjectDraft): Promise<Project> {
     throw new Error('Project not created')
   }
 
-  return rows[0]
+  // todo: find out why errors in types appear during typecheck, remove type casting
+  return (rows[0] as Project)
 }
 
 /**
  * Attach user to project
  *
- * @param data
+ * @param data AttachUserData
  * @returns ProjectUser
  */
 export async function attachUserToProject(data: AttachUserData): Promise<ProjectUser> {
   const db = useDatabase()
 
   const attachDraft = projectUserDraftSchema.parse(data)
-
   const rows = await db.insert(tables.projectsUsers).values({
     ...attachDraft,
   }).returning()
@@ -148,5 +148,6 @@ export async function attachUserToProject(data: AttachUserData): Promise<Project
     throw new Error('Project relations not created')
   }
 
-  return rows[0]
+  // todo: find out why errors in types appear during typecheck, remove type casting
+  return (rows[0] as ProjectUser)
 }
