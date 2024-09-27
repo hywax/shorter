@@ -29,7 +29,7 @@
     "vue": "^3.4.38"
   },
   "devDependencies": {
-    "@rollup/plugin-typescript": "^11.1.6",
+    "@rollup/plugin-typescript": "^12.1.0",
     "@shorter/eslint-config": "workspace:*",
     "@types/node": "^22.5.2",
     "@vitejs/plugin-vue": "^5.1.3",
