@@ -15,12 +15,12 @@
             {{ $t('projects.title') }}
           </p>
 
-          <ULink to="/" class="rounded-md border border-gray-200 dark:border-gray-800 px-2 py-1 text-xs transition-colors hover:bg-gray-100 dark:hover:bg-gray-800">
+          <NuxtLink to="/" class="rounded-md border border-gray-200 dark:border-gray-800 px-2 py-1 text-xs transition-colors hover:bg-gray-100 dark:hover:bg-gray-800">
             {{ $t('projects.selector.viewAll') }}
-          </ULink>
+          </NuxtLink>
         </div>
 
-        <ULink
+        <NuxtLink
           v-for="project in projects"
           :key="project.name"
           :to="`/${project.id}`"
@@ -35,7 +35,7 @@
           <div v-if="project.id === currentProject?.id" class="absolute inset-y-0 right-0 flex items-center pr-3 text-black">
             <UIcon name="i-heroicons:check" class="h-5 w-5" />
           </div>
-        </ULink>
+        </NuxtLink>
 
         <button
           class="relative flex w-full items-center space-x-2 rounded-md px-2 py-1.5 font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-75"
