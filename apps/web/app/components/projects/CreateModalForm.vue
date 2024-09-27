@@ -2,21 +2,29 @@
   <UModal v-model="modalIsOpen">
     <UForm
       ref="form"
-      class="p-6 space-y-4"
       :state="state"
       :schema="projectCreateSchema"
       @submit="onSubmit"
     >
-      <UFormGroup :label="$t('projects.create.form.name.label')" name="name" required>
-        <UInput v-model="state.name" :placeholder="$t('projects.create.form.name.placeholder')" />
-      </UFormGroup>
-      <UFormGroup :label="$t('projects.create.form.description.label')" name="description">
-        <UInput v-model="state.description" :placeholder="$t('projects.create.form.description.placeholder')" />
-      </UFormGroup>
+      <UPageCard
+        :title="$t('projects.create.title')"
+        :description="$t('projects.create.description')"
+      >
+        <div class="space-y-4">
+          <UFormGroup :label="$t('projects.create.form.name.label')" name="name" required>
+            <UInput v-model="state.name" :placeholder="$t('projects.create.form.name.placeholder')" />
+          </UFormGroup>
+          <UFormGroup :label="$t('projects.create.form.description.label')" name="description">
+            <UTextarea v-model="state.description" :placeholder="$t('projects.create.form.description.placeholder')" />
+          </UFormGroup>
+        </div>
 
-      <UButton type="submit" :loading="status === 'pending'">
-        ...
-      </UButton>
+        <template #footer-left>
+          <UButton type="submit" :loading="status === 'pending'">
+            {{ $t('projects.create.form.action.create') }}
+          </UButton>
+        </template>
+      </UPageCard>
     </UForm>
   </UModal>
 </template>
