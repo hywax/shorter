@@ -63,6 +63,7 @@
       "400006": "Invalid account delete data",
       "400007": "Token expired",
       "400008": "Invalid token",
+      "400009": "Invalid project creation data",
       "401000": "Unauthorized",
       "403000": "Forbidden",
       "403001": "Access only for unauthorized users",
@@ -74,6 +75,7 @@
       "404000": "Not found",
       "404001": "User not found",
       "409001": "User with this email already exists",
+      "409002": "Project already exist",
       "500000": "Internal server error",
       "501000": "Not implemented"
     }
@@ -215,8 +217,22 @@
     },
     "create": {
       "title": "Create a new project",
+      "description": "Enter the details for your new project here",
       "name": "Project Name",
-      "action": "Create Project"
+      "action": "Create Project",
+      "form": {
+        "name": {
+          "label": "Name",
+          "placeholder": "Enter project name"
+        },
+        "description": {
+          "label": "Description",
+          "placeholder": "Enter project description"
+        },
+        "action": {
+          "create": "Create"
+        }
+      }
     },
     "greeting": {
       "title": "Create your first project",
