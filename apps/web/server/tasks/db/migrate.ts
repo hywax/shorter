@@ -1,7 +1,7 @@
 import { resolve } from 'node:path'
 import process from 'node:process'
-import { migrate } from 'drizzle-orm/better-sqlite3/migrator'
 import { useDatabase } from '#core/database'
+import { migrate } from 'drizzle-orm/better-sqlite3/migrator'
 
 /**
  * Run database migrations

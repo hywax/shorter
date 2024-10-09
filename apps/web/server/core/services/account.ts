@@ -1,8 +1,8 @@
-import { z } from 'zod'
+import type { User } from '#core/database'
+import { tables, useDatabase } from '#core/database'
 import bcrypt from 'bcrypt'
 import { eq } from 'drizzle-orm'
-import { tables, useDatabase } from '#core/database'
-import type { User } from '#core/database'
+import { z } from 'zod'
 
 interface AccountChangePasswordData {
   userId: User['id']

@@ -1,7 +1,7 @@
-import { dirname, resolve } from 'node:path'
 import { mkdirSync } from 'node:fs'
-import { type BetterSQLite3Database, drizzle } from 'drizzle-orm/better-sqlite3'
+import { dirname, resolve } from 'node:path'
 import BetterSqlite3 from 'better-sqlite3'
+import { type BetterSQLite3Database, drizzle } from 'drizzle-orm/better-sqlite3'
 import * as schema from './tables'
 
 export interface CreateConnectionOptions {

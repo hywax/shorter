@@ -1,6 +1,6 @@
-import { integer, text } from 'drizzle-orm/sqlite-core'
 import { createId } from '@paralleldrive/cuid2'
 import { sql } from 'drizzle-orm'
+import { integer, text } from 'drizzle-orm/sqlite-core'
 
 export function idField(name: string) {
   return text(name)

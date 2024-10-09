@@ -1,5 +1,5 @@
 import process from 'node:process'
-import { type Database, createConnection } from './connection'
+import { createConnection, type Database } from './connection'
 
 let instance: Database | null = null
 const logger = useLogger('database')
