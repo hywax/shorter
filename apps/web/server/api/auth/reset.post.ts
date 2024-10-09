@@ -1,6 +1,6 @@
 import { ERROR_TOKEN_EXPIRED, ERROR_TOKEN_INVALID_DATA } from '#constants/errors'
-import { resetPassword, validateUserPasswordResetToken } from '#core/services/user'
 import { getProjectsAvailableList } from '#core/services/project'
+import { resetPassword, validateUserPasswordResetToken } from '#core/services/user'
 
 export default defineEventHandler(async (event) => {
   try {

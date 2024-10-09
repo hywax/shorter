@@ -1,6 +1,6 @@
 import type { Component } from 'vue'
-import { render } from '@vue-email/render'
 import type { Template, TemplateRendered } from '../types'
+import { render } from '@vue-email/render'
 import ChangePasswordTemplate from './templates/change-password.vue'
 import ProjectInviteTemplate from './templates/project-invite.vue'
 

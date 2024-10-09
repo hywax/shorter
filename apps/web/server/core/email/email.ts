@@ -1,10 +1,10 @@
-import type { Transporter } from 'nodemailer'
-import { createTransport } from 'nodemailer'
-import type { SentMessageInfo } from 'nodemailer/lib/smtp-pool'
 import type { H3Event } from 'h3'
-import { renderTemplate } from './template'
+import type { Transporter } from 'nodemailer'
+import type { SentMessageInfo } from 'nodemailer/lib/smtp-pool'
 import type { Templates } from './types'
+import { createTransport } from 'nodemailer'
 import { EmailError } from './errors'
+import { renderTemplate } from './template'
 
 export type EmailSendOptions = Templates & {
   to: string

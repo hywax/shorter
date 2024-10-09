@@ -3,8 +3,8 @@
  * Necessary for up-to-date translation of all errors.
  */
 
-import { resolve } from 'node:path'
 import { readFile } from 'node:fs/promises'
+import { resolve } from 'node:path'
 import process from 'node:process'
 
 function parseErrorArray(errorArray) {

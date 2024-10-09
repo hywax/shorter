@@ -1,6 +1,6 @@
 import { ERROR_EMAIL_CREDENTIALS, ERROR_USER_INVALID_DATA, ERROR_USER_NOT_FOUND } from '#constants/errors'
-import { createPasswordReset, findUserByEmail } from '#core/services/user'
 import { useEmail } from '#core/email'
+import { createPasswordReset, findUserByEmail } from '#core/services/user'
 
 export default defineEventHandler(async (event) => {
   try {

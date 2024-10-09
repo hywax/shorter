@@ -1,5 +1,5 @@
-import { updateUserOnlineStatus } from '#core/services/user'
 import { getProjectsAvailableList } from '#core/services/project'
+import { updateUserOnlineStatus } from '#core/services/user'
 
 export default defineNitroPlugin(() => {
   sessionHooks.hook('fetch', async (session) => {

@@ -1,5 +1,5 @@
-import { projectDraftSchema, projectUserDraftSchema, tables, useDatabase } from '#core/database'
 import type { Project, ProjectDraft, ProjectUser, User } from '#core/database'
+import { projectDraftSchema, projectUserDraftSchema, tables, useDatabase } from '#core/database'
 
 export type ProjectAvailable = Pick<ProjectUser, 'role'> & Pick<Project, 'id' | 'name'>
 

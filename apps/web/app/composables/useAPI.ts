@@ -1,7 +1,7 @@
-import { defu } from 'defu'
-import type { FetchError } from 'ofetch'
 import type { AvailableRouterMethod, NitroFetchRequest } from 'nitropack'
 import type { AsyncData, FetchResult, UseFetchOptions } from 'nuxt/app'
+import type { FetchError } from 'ofetch'
+import { defu } from 'defu'
 
 type PickFrom<T, K extends Array<string>> = T extends Array<any> ? T : T extends Record<string, any> ? keyof T extends K[number] ? T : K[number] extends never ? T : Pick<T, K[number]> : T
 type KeysOf<T> = Array<T extends T ? (keyof T extends string ? keyof T : never) : never>

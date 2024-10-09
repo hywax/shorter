@@ -1,6 +1,6 @@
-import { resolve } from 'node:path'
-import { cp, mkdir } from 'node:fs/promises'
 import type { NitroPreset } from 'nitropack'
+import { cp, mkdir } from 'node:fs/promises'
+import { resolve } from 'node:path'
 
 export default <NitroPreset>{
   extends: 'node-server',

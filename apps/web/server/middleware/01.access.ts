@@ -1,5 +1,5 @@
-import { isMatch } from 'matcher'
 import { ERROR_ACCESS_ONLY_GUEST, ERROR_UNAUTHORIZED } from '#constants/errors'
+import { isMatch } from 'matcher'
 
 export default defineEventHandler(async (event) => {
   const onlyGuestRoutes: string[] = [
