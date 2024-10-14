@@ -43,7 +43,7 @@
   "devDependencies": {
     "@iconify-json/emojione": "^1.2.0",
     "@iconify-json/heroicons": "^1.2.1",
-    "@iconify-json/simple-icons": "^1.2.7",
+    "@iconify-json/simple-icons": "^1.2.8",
     "@shorter/email-templates": "workspace:*",
     "@shorter/eslint-config": "workspace:*",
     "@types/bcrypt": "^5.0.2",
